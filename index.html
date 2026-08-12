@@ -499,12 +499,16 @@
   .wcard img{width:100%;display:block}
   @media (max-width:760px){.wins-wall{columns:2}}
   @media (max-width:480px){.wins-wall{columns:1}}
-  /* taught in real life (hero credibility strip) */
+  /* live trainings -> now in discord (hero credibility strip) */
   .taught{margin-top:44px;padding-top:30px;border-top:1px solid var(--line)}
   .taught-head{display:flex;align-items:flex-end;justify-content:space-between;gap:20px;flex-wrap:wrap;margin-bottom:20px}
   .taught-head h2{font-size:clamp(20px,2.4vw,26px);letter-spacing:-.01em;margin-top:6px}
   .taught-head .t-note{color:var(--muted);font-size:15px;max-width:46ch;margin-bottom:2px}
   .taught-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+  .t-free{display:flex;align-items:flex-start;gap:11px;margin-top:16px;background:var(--green-soft);
+    border:1px solid rgba(18,226,124,.22);border-radius:12px;padding:13px 16px;font-size:15px;color:var(--muted)}
+  .t-free .c{color:var(--green);flex:none;line-height:1.45}
+  .t-free b{color:var(--text);font-weight:600}
   .tshot{position:relative;margin:0;border:1px solid var(--line2);border-radius:14px;overflow:hidden;
     background:var(--surface);aspect-ratio:1/1;transition:border-color .3s,transform .3s var(--ease)}
   .tshot:hover{border-color:rgba(18,226,124,.35);transform:translateY(-3px)}
@@ -514,9 +518,22 @@
     background:linear-gradient(180deg,transparent 42%,rgba(11,14,17,.88))}
   .tshot .cap{position:absolute;z-index:1;left:12px;right:12px;bottom:10px;
     font-family:var(--f-mono);font-size:11px;letter-spacing:.03em;line-height:1.35;color:#cfd8e3}
-  .tshot .cap b{display:block;color:var(--green);font-weight:500;font-size:10px;letter-spacing:.12em;margin-bottom:3px}
+  .tshot .cap b{display:block;color:var(--green);font-weight:500;font-size:10px;letter-spacing:.1em;margin-top:4px}
   @media (max-width:900px){.taught-grid{grid-template-columns:repeat(2,1fr)}}
-  @media (max-width:480px){.taught{margin-top:32px;padding-top:24px}.taught-grid{gap:10px}.tshot .cap{left:9px;right:9px;font-size:10px}}
+  /* mobile: swipeable strip so each photo stays large enough to read */
+  @media (max-width:640px){
+    .taught{margin-top:32px;padding-top:24px}
+    .taught-head{gap:10px;margin-bottom:16px}
+    .taught-head h2{margin-top:4px}
+    .taught-head .t-note{font-size:14.5px;max-width:none}
+    .taught-grid{display:flex;gap:10px;overflow-x:auto;scroll-snap-type:x mandatory;
+      -webkit-overflow-scrolling:touch;scrollbar-width:none;
+      margin:0 -18px;padding:2px 18px}
+    .taught-grid::-webkit-scrollbar{display:none}
+    .tshot{flex:0 0 66%;scroll-snap-align:center}
+    .tshot:hover{transform:none}
+    .t-free{font-size:14.5px;padding:12px 14px;gap:9px}
+  }
   @media (prefers-reduced-motion:reduce){.tshot,.tshot img{transition:none}.tshot:hover{transform:none}.tshot:hover img{transform:none}}
   /* discord trigger message */
   .dc-msg{display:flex;gap:14px;background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:18px 20px}
@@ -692,33 +709,37 @@
     <span class="chip"><span class="dot"></span> 130+ 5-star reviews</span>
   </div>
 
-  <!-- TAUGHT IN REAL LIFE - in-person credibility. Photos are real classes; do not caption them as FPU-branded events. -->
+  <!-- LIVE TRAININGS -> DISCORD. Photos are real classes; do not caption them as FPU-branded events. -->
   <div class="taught reveal">
     <div class="taught-head">
       <div>
-        <span class="eyebrow">Taught in real life</span>
-        <h2>Not just a Discord &mdash; <span class="hl">Justin teaches this in person.</span></h2>
+        <span class="eyebrow">Now online</span>
+        <h2>We taught this in real rooms. <span class="hl">Now it all happens in Discord.</span></h2>
       </div>
-      <p class="t-note">Live classes and masterclasses in real rooms &mdash; Los Angeles and beyond &mdash; walking beginners through the same risk-first process the desk trades every day.</p>
+      <p class="t-note">Every live training and every live trade we used to run in person now runs inside the community &mdash; daily, from anywhere.</p>
     </div>
     <div class="taught-grid">
       <figure class="tshot">
         <img src="teach-chart-breakdown.jpg" alt="Justin breaking down a live chart on screen for a room of students" decoding="async" />
-        <figcaption class="cap"><b>In person</b>Live chart breakdown</figcaption>
+        <figcaption class="cap">Live chart breakdowns<b>Now daily in Discord</b></figcaption>
       </figure>
       <figure class="tshot">
         <img src="teach-classroom.jpg" alt="Justin teaching a room of students about setting realistic expectations" decoding="async" />
-        <figcaption class="cap"><b>In person</b>Expectations &amp; risk</figcaption>
+        <figcaption class="cap">Risk &amp; expectations<b>Now the free course</b></figcaption>
       </figure>
       <figure class="tshot">
         <img src="teach-workshop.jpg" alt="Justin leading a small-group trading workshop around a conference table" decoding="async" />
-        <figcaption class="cap"><b>In person</b>Small-group workshop</figcaption>
+        <figcaption class="cap">Small-group Q&amp;A<b>Now every week</b></figcaption>
       </figure>
       <figure class="tshot">
         <img src="teach-seminar.jpg" alt="Justin presenting a trading seminar to a seated classroom" decoding="async" />
-        <figcaption class="cap"><b>In person</b>Classroom seminar</figcaption>
+        <figcaption class="cap">Full seminars<b>Now weekly live teaching</b></figcaption>
       </figure>
     </div>
+    <p class="t-free">
+      <svg class="c" width="17" height="17" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M10 1.7l2.4 4.9 5.4.8-3.9 3.8.9 5.4-4.8-2.6-4.8 2.6.9-5.4L2.2 7.4l5.4-.8L10 1.7z" fill="currentColor"/></svg>
+      <span><b>All of it is taught free inside the community.</b> The same beginner education we ran in those rooms is included from day one &mdash; you don't pay extra for any of it.</span>
+    </p>
   </div>
 
   <div class="vsl reveal" id="vsl">
