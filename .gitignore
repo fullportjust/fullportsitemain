@@ -1,0 +1,7 @@
+# Source photo originals — only the optimized copies at repo root ship to the site
+Trading Images/
+
+# OS / editor cruft
+Thumbs.db
+desktop.ini
+.DS_Store

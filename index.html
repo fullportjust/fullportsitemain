@@ -499,6 +499,25 @@
   .wcard img{width:100%;display:block}
   @media (max-width:760px){.wins-wall{columns:2}}
   @media (max-width:480px){.wins-wall{columns:1}}
+  /* taught in real life (hero credibility strip) */
+  .taught{margin-top:44px;padding-top:30px;border-top:1px solid var(--line)}
+  .taught-head{display:flex;align-items:flex-end;justify-content:space-between;gap:20px;flex-wrap:wrap;margin-bottom:20px}
+  .taught-head h2{font-size:clamp(20px,2.4vw,26px);letter-spacing:-.01em;margin-top:6px}
+  .taught-head .t-note{color:var(--muted);font-size:15px;max-width:46ch;margin-bottom:2px}
+  .taught-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+  .tshot{position:relative;margin:0;border:1px solid var(--line2);border-radius:14px;overflow:hidden;
+    background:var(--surface);aspect-ratio:1/1;transition:border-color .3s,transform .3s var(--ease)}
+  .tshot:hover{border-color:rgba(18,226,124,.35);transform:translateY(-3px)}
+  .tshot img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s var(--ease)}
+  .tshot:hover img{transform:scale(1.04)}
+  .tshot::after{content:"";position:absolute;inset:0;pointer-events:none;
+    background:linear-gradient(180deg,transparent 42%,rgba(11,14,17,.88))}
+  .tshot .cap{position:absolute;z-index:1;left:12px;right:12px;bottom:10px;
+    font-family:var(--f-mono);font-size:11px;letter-spacing:.03em;line-height:1.35;color:#cfd8e3}
+  .tshot .cap b{display:block;color:var(--green);font-weight:500;font-size:10px;letter-spacing:.12em;margin-bottom:3px}
+  @media (max-width:900px){.taught-grid{grid-template-columns:repeat(2,1fr)}}
+  @media (max-width:480px){.taught{margin-top:32px;padding-top:24px}.taught-grid{gap:10px}.tshot .cap{left:9px;right:9px;font-size:10px}}
+  @media (prefers-reduced-motion:reduce){.tshot,.tshot img{transition:none}.tshot:hover{transform:none}.tshot:hover img{transform:none}}
   /* discord trigger message */
   .dc-msg{display:flex;gap:14px;background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:18px 20px}
   .dc-msg .av{width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,#1b222b,#0d1117);border:1px solid var(--line2);
@@ -672,6 +691,36 @@
     <span class="chip"><span class="dot"></span> Free course included</span>
     <span class="chip"><span class="dot"></span> 130+ 5-star reviews</span>
   </div>
+
+  <!-- TAUGHT IN REAL LIFE - in-person credibility. Photos are real classes; do not caption them as FPU-branded events. -->
+  <div class="taught reveal">
+    <div class="taught-head">
+      <div>
+        <span class="eyebrow">Taught in real life</span>
+        <h2>Not just a Discord &mdash; <span class="hl">Justin teaches this in person.</span></h2>
+      </div>
+      <p class="t-note">Live classes and masterclasses in real rooms &mdash; Los Angeles and beyond &mdash; walking beginners through the same risk-first process the desk trades every day.</p>
+    </div>
+    <div class="taught-grid">
+      <figure class="tshot">
+        <img src="teach-chart-breakdown.jpg" alt="Justin breaking down a live chart on screen for a room of students" decoding="async" />
+        <figcaption class="cap"><b>In person</b>Live chart breakdown</figcaption>
+      </figure>
+      <figure class="tshot">
+        <img src="teach-classroom.jpg" alt="Justin teaching a room of students about setting realistic expectations" decoding="async" />
+        <figcaption class="cap"><b>In person</b>Expectations &amp; risk</figcaption>
+      </figure>
+      <figure class="tshot">
+        <img src="teach-workshop.jpg" alt="Justin leading a small-group trading workshop around a conference table" decoding="async" />
+        <figcaption class="cap"><b>In person</b>Small-group workshop</figcaption>
+      </figure>
+      <figure class="tshot">
+        <img src="teach-seminar.jpg" alt="Justin presenting a trading seminar to a seated classroom" decoding="async" />
+        <figcaption class="cap"><b>In person</b>Classroom seminar</figcaption>
+      </figure>
+    </div>
+  </div>
+
   <div class="vsl reveal" id="vsl">
     <div class="vsl-frame">
       <!-- To publish: replace this .vsl-poster div with your VSL embed iframe (YouTube/Vimeo/Loom/Wistia). -->
