@@ -62,6 +62,10 @@ This is a separate, from-scratch site — **not** the legacy WordPress site at f
 
 Static site → GitHub repo → Vercel git integration → auto-deploy on push. Claude Code handles the codebase (edits, new pages, commits, deploys). Claude chat handles strategy, copywriting, the keyword/content plan, and generating image assets, then hands finished content here to be wired in.
 
+**Copy and marketing work — do not write it straight into the page.** Any headline, subhead, CTA, caption, chip, or section copy goes through a copywriting pass first, briefed with: this file (positioning, hard rules, compliance language), the decisions already made in the working session, and the direct-response goal (cold beginner → free Whop trial). Bring back options, then wire in the chosen one. Applies to rewrites and tightening passes, not to fixing a typo.
+
+**Never ship an unverified factual claim in copy.** Anything concrete — billing terms, access hours, member counts, analyst headcount, review counts — must be confirmed with Justin before it goes on the page. Drop the claim rather than guess.
+
 ## How Justin communicates
 
 Justin often writes via voice transcription, so expect phonetic approximations of technical terms: "Verso"/"Versal" = Vercel, "WAP"/"swap" = Whop, "weball" = Webull, "fan bases" = Fanbasis, "magistrate" = mentorship. Interpret by context.
