@@ -1,22 +1,30 @@
 # Full Port University
 
-> Full Port University (FPU) is a beginner-friendly options and stock trading community on Discord. Members get real-time buy/trim/sell trade signals from a multi-analyst desk, a free 12-lesson options course, and weekly live teaching. A 14-day free trial is available through Whop.
+> Full Port University (FPU) is a beginner-friendly options and stock trading community on Discord. Membership gives you access to 5 analysts posting live [BUY] / [TRIM] / [SELL] trade signals, a full beginner options course, weekly live teaching sessions, and 10,000+ members. A 14-day free trial is available through Whop; membership is $99/month afterwards, billed month to month.
 
-Full Port University teaches options trading from zero. The core is a Discord server with live [BUY] to [TRIM] to [SELL] signals, structured beginner education, and daily community trading across stocks and options.
+Full Port University teaches options trading from zero. The core is a Discord community where analysts post their own trades in real time — the entry, the trim, and the close, with the reasoning attached — alongside structured beginner education. Members follow along and learn to read the chart themselves.
 
 ## Key pages
-- [Home](https://fullportuniversity.com/): What FPU is, how the free trial works, and real member results.
-- [How It Works](https://fullportuniversity.com/how-it-works): The Buy/Trim/Sell trade-signal system explained step by step.
-- [Education](https://fullportuniversity.com/education): The free 12-lesson course, beginner series, and weekly live sessions.
+- [Home](https://fullportuniversity.com/): What access includes, how the free trial works, and real member results.
+- [How It Works](https://fullportuniversity.com/how-it-works): One real trade shown start to finish from Discord, then the [BUY] / [TRIM] / [SELL] system decoded.
+- [Education](https://fullportuniversity.com/education): The member course — charts, then options, then the core indicators — plus the analysts' indicator setups and the shared watchlist.
+- [How to Read a Trade Signal](https://fullportuniversity.com/how-to-read-a-trade-signal): Beginner guide to [BUY], [TRIM], [SELL], strikes, expirations, DTE and position sizing.
 
 ## About
 - Format: Discord community with live options and stock trade signals plus education
 - Best for: complete beginners through intermediate options traders
+- Analysts: 5, each posting to their own channel, reachable directly by members
+- Community size: 10,000+ members
 - Signal system: [BUY] to open, [TRIM] to take partial profit, [SELL] to close
-- Pricing: 14-day free trial via Whop; paid membership afterward
+- Position sizing: FULL (3-5% of account), SMALL (1-3%), LOTTO (under 1%)
+- Risk framing: by DTE (days to expiration) — 1-7 days most dangerous, 30+ days lowest risk of the four
+- Course structure: three stages — set up and read charts, how options work, then the core indicators (RSI, Bollinger Bands, MACD)
+- Access: the course, the indicator setups and the watchlist are member benefits, unlocked on joining. Nothing on the site is free except the trial.
+- Pricing: 14 days free, cancel anytime before day 14 and you are never charged; $99/month afterwards, billed month to month
+- Reviews: 130+ 5-star reviews on Whop
 - Contact: growth@fullportuniversity.com
 - Instagram: https://www.instagram.com/fullportuniversity.just
 - TikTok: https://www.tiktok.com/@fullport.just
 
 ## Important disclosure
-Full Port University is an educational community, not a registered investment advisor. All content is educational only and is not financial advice. Trading options and stocks involves substantial risk of loss; member and past results are not typical and are not a guarantee of future performance.
+Full Port University is an educational community, not a registered investment advisor. All content is educational only and is not financial advice. Signals reflect what our analysts are doing and are not a recommendation for you; nothing happens in your account unless you place it yourself. Trading options and stocks involves substantial risk of loss — most traders lose money, not every trade wins, and you can lose your entire investment. Member and past results are self-reported, not typical, and are not a guarantee of future performance.
