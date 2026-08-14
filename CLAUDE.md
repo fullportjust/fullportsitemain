@@ -4,9 +4,9 @@ Context for Claude Code. Read this before making changes.
 
 ## The point of this project
 
-Full Port University (FPU) is a beginner-friendly options and stock trading education + signals community on Discord, run by Justin Kim and monetized through Whop (a 14-day free trial that converts to paid membership). The core offer is live `[BUY]` → `[TRIM]` → `[SELL]` trade signals from a multi-analyst desk, a free beginner course, and weekly live teaching.
+Full Port University (FPU) is a beginner-friendly options and stock trading education + signals community on Discord, run by Justin Kim and monetized through Whop (a 14-day free trial that converts to paid membership). The core offer is access: live `[BUY]` → `[TRIM]` → `[SELL]` trade signals from 5 analysts, the full beginner course, weekly live teaching, and a 10,000+ member community. **Nothing is free except the 14-day trial** — the course is a member benefit and must never be called free.
 
-This repo is a high-converting marketing website whose job is to take a cold beginner — someone who has never traded options — and move them into the free Whop trial. Everything on the site serves that funnel. The positioning that makes FPU different from competitors (e.g. Capital Club, a solo-founder swing-trading Discord) is **beginner-first teaching + a multi-analyst desk + options/DTE specialization**. Lead with "you can learn this from zero," use signals and member results as proof, push the free trial hard.
+This repo is a high-converting marketing website whose job is to take a cold beginner — someone who has never traded options — and move them into the free Whop trial. Everything on the site serves that funnel. The positioning that makes FPU different from competitors (e.g. Capital Club, a solo-founder swing-trading Discord) is **beginner-first teaching + 5 analysts + options/DTE specialization**. Lead with "you can learn this from zero," use signals and member results as proof, push the free trial hard.
 
 This is a separate, from-scratch site — **not** the legacy WordPress site at fullportuniversity.com, and **not** the other FPU properties (the Framer funnel, the mentorship page, the onboarding app). It is intended to eventually become fullportuniversity.com, but currently deploys to a Vercel staging URL.
 
@@ -15,7 +15,7 @@ This is a separate, from-scratch site — **not** the legacy WordPress site at f
 - Plain static HTML/CSS/JS. No framework, no build step. Each page is a self-contained `.html` file with inline `<style>` and a small inline `<script>`.
 - `vercel.json` provides `cleanUrls` (so `/how-it-works` serves `how-it-works.html`) and security headers.
 - Pages: `index.html` (home), `how-it-works.html`, `education.html`, `how-to-read-a-trade-signal.html` (a guide/blog article), `404.html`.
-- No pricing page — it was intentionally dropped; every trial CTA links straight to `https://whop.com/fullportuniversity/`.
+- No pricing page — it was intentionally dropped; every trial CTA links straight to the Whop checkout: `https://whop.com/checkout/plan_yQftI4SvldGYW/`.
 - Shared shell (nav, footer, `<head>` CSS, risk strip, JSON-LD) is duplicated across every page because there's no templating. **When you change the nav/footer/CSS, change it in all pages consistently.**
 
 ## Design system
@@ -32,21 +32,23 @@ This is a separate, from-scratch site — **not** the legacy WordPress site at f
 - **Authenticity is non-negotiable.** Profit/results imagery must be real screenshots from the Discord `#post-profits` channel with accurate figures — never fabricated composites, never inflated numbers, never duplicated trades presented as different ones.
 - **Signal system on this site is three steps:** `[BUY]` → `[TRIM]` → `[SELL]`. (Older FPU properties reference a `[LOAD]` step — this site does not use it.) Position sizing tiers: FULL / SMALL / LOTTO. Risk framed around DTE (days to expiration).
 - **Member count:** use "10,000+." Other FPU properties show inconsistent figures (4,500 / 7,000) — flag, don't copy.
-- **Images:** content images (profit screenshots, etc.) are external, optimized, lazy-loaded files — not base64. The logo is a single external `logo.png` (cached across pages). Keep pages light; don't re-embed large base64.
+- **Images:** content images (profit screenshots, etc.) are external, optimized, lazy-loaded files — **not base64**. The logo, favicon and apple-touch icon are external files too. Keep pages light; the site was once 49% base64 by weight on one page. Resize before committing: nothing should ship at multiple megapixels to render in a 280px card.
 
 ## SEO / AEO (already implemented — maintain it)
 
-- JSON-LD on every page: `Organization` (with `sameAs`), plus `WebSite` + `FAQPage` on home, `Course` on education, and `Article` + `FAQPage` + `BreadcrumbList` on the guide. Keep it valid JSON and keep FAQ schema mirroring the visible FAQ text.
+- JSON-LD on every page: `Organization` (with `sameAs`), plus `WebSite` + `FAQPage` on home, `Course` + `FAQPage` on education, `FAQPage` on how-it-works, and `Article` + `FAQPage` + `BreadcrumbList` on the guide. Every page showing a FAQ carries `FAQPage`. Keep it valid JSON and keep FAQ schema mirroring the visible FAQ text.
 - `sitemap.xml`, `robots.txt` (explicitly welcomes AI crawlers: GPTBot, ClaudeBot, PerplexityBot, etc.), and `llms.txt` exist at root.
 - Canonical / OG / sitemap URLs all use `https://fullportuniversity.com/` — correct only once this site IS that domain. **On the staging Vercel URL, do not submit the sitemap to Search Console.**
 - **Strategy:** don't chase head terms ("options trading"); win long-tail + Discord + brand/comparison terms via content. Keyword/content plan lives in `FPU-seo-aeo-plan.md` (kept outside the repo). The first article (`how-to-read-a-trade-signal.html`) is done.
 
 ## Key facts
 
-- CTAs → `https://whop.com/fullportuniversity/`
+- CTAs → `https://whop.com/checkout/plan_yQftI4SvldGYW/` (the Whop profile URL is used only in the Organization `sameAs`, and the reviews link)
 - Support email: `growth@fullportuniversity.com`
 - Socials in schema + footer: Instagram `@fullportuniversity.just`, TikTok `@fullport.just`. (No public X / YouTube / Discord-invite URL on record yet.)
-- Mentorship program link: `https://fpumentorship.vercel.app/`
+- Price: **$99/month, billed month to month**. Trial: 14 days free, cancel before day 14, never charged.
+- Facts that must stay consistent: **5 analysts**, **10,000+ members**, **130+ 5-star reviews**, **24/7 Discord access**.
+- The word "mentorship" is banned in visible copy, and the Advisory Program footer link has been removed.
 
 ## ⚠️ Open items / roadmap
 
