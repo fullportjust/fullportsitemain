@@ -509,6 +509,16 @@
   .chart-wrap{background:#0d1117;border:1px solid var(--line2);border-radius:var(--r);padding:26px 22px;margin-top:44px;
     box-shadow:0 30px 80px -34px rgba(0,0,0,.6)}
   .chart-wrap svg{width:100%;height:auto;display:block}
+  /* mobile: the 720-wide viewBox shrinks the labels to ~6px on a phone.
+     Hold a legible minimum and let the chart scroll sideways instead. */
+  @media (max-width:640px){
+    .chart-wrap{overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+    .chart-wrap::-webkit-scrollbar{display:none}
+    .chart-wrap svg{width:660px;max-width:none}
+    .chart-legend{gap:14px;font-size:13px}
+    .chart-swipe{display:block}
+  }
+  .chart-swipe{display:none;margin-top:10px;text-align:center;font-family:var(--f-mono);font-size:11px;letter-spacing:.1em;color:var(--muted2)}
   .chart-legend{display:flex;gap:24px;flex-wrap:wrap;justify-content:center;margin-top:22px}
   .chart-legend .lg{display:flex;align-items:center;gap:8px;font-size:13.5px;color:var(--muted);font-family:var(--f-mono)}
   .chart-legend .dot{width:10px;height:10px;border-radius:50%;flex:none}
@@ -578,9 +588,52 @@
 <section class="page-hero wrap">
   <span class="eyebrow reveal">How it works</span>
   <h1 class="reveal">Inside, the trades get called out loud.</h1>
-  <p class="sub reveal">Every FPU trade runs in three steps &mdash; buy, trim, sell &mdash; and members watch all three happen live. You see when the analyst bought, when they took profit off, and when they were out, with the reasoning attached.</p>
+  <p class="sub reveal">Our analysts call their own real trades live, on the same system you'll be looking at. Every trade runs in three steps &mdash; buy, trim, sell &mdash; and you watch all three happen: when they bought, when they took profit off, and when they were out, with the reasoning attached.</p>
   <div class="hero-cta reveal">
     <a class="btn btn--primary btn--lg" href="https://whop.com/fullportuniversity/" target="_blank" rel="noopener">Get inside &mdash; 14 days free</a>
+  </div>
+</section>
+
+<!-- SEE IT ON A CHART -->
+<section class="section wrap" style="padding-top:20px">
+  <div class="sec-head reveal" style="text-align:center;margin:0 auto">
+    <span class="eyebrow" style="justify-content:center">See it on a chart</span>
+    <h2>The same trade, start to finish.</h2>
+    <p class="lead" style="margin-left:auto;margin-right:auto">This one bought near a low, trimmed into strength, and closed before it faded. Here's how the three signals map onto real price movement &mdash; not every trade goes this way.</p>
+  </div>
+  <div class="chart-wrap reveal" role="group" tabindex="0" aria-label="Price chart with the buy, trim and sell signals">
+    <svg viewBox="0 0 720 360" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Price chart showing where the buy, trim and sell signals happen">
+      <defs><linearGradient id="af" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#12E27C" stop-opacity=".22"/><stop offset="1" stop-color="#12E27C" stop-opacity="0"/></linearGradient></defs>
+      <g stroke="#1c232c" stroke-width="1"><line x1="40" y1="120" x2="694" y2="120"/><line x1="40" y1="210" x2="694" y2="210"/><line x1="40" y1="300" x2="694" y2="300"/></g>
+      <line x1="60" y1="300" x2="694" y2="300" stroke="#2E3947" stroke-width="1.5" stroke-dasharray="5 6"/>
+      <text x="690" y="316" text-anchor="end" font-family="'JetBrains Mono',monospace" font-size="11" fill="#5F6B7A">breakeven (the entry)</text>
+      <path class="chart-area" d="M60 300 L120 286 L165 293 L225 250 L285 236 L330 200 L385 212 L445 165 L515 140 L575 118 L630 92 L662 78 L662 322 L60 322 Z" fill="url(#af)"/>
+      <path class="chart-line" d="M60 300 L120 286 L165 293 L225 250 L285 236 L330 200 L385 212 L445 165 L515 140 L575 118 L630 92 L662 78" fill="none" stroke="#12E27C" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+      <!-- BUY --><g class="chart-mark">
+      <circle cx="60" cy="300" r="7" fill="#12E27C" stroke="#0d1117" stroke-width="3"/>
+      <rect x="58" y="266" rx="6" width="150" height="26" fill="rgba(18,226,124,.14)" stroke="rgba(18,226,124,.42)"/>
+      <text x="70" y="283" font-family="'JetBrains Mono',monospace" font-size="13" font-weight="700" fill="#12E27C">[BUY] @ $0.60</text>
+      </g>
+      <!-- TRIM --><g class="chart-mark">
+      <circle cx="330" cy="200" r="7" fill="#7FE0FF" stroke="#0d1117" stroke-width="3"/>
+      <line x1="330" y1="176" x2="330" y2="192" stroke="#7FE0FF" stroke-width="1.2" stroke-dasharray="3 3"/>
+      <rect x="264" y="150" rx="6" width="132" height="26" fill="rgba(127,224,255,.12)" stroke="rgba(127,224,255,.42)"/>
+      <text x="330" y="167" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="13" font-weight="700" fill="#7FE0FF">[TRIM] +40%</text>
+      <text x="330" y="228" text-anchor="middle" font-family="'Inter',sans-serif" font-size="11.5" fill="#8A96A5">sold &frac14; &middot; stop &rarr; breakeven</text>
+      </g>
+      <!-- SELL --><g class="chart-mark">
+      <circle cx="662" cy="78" r="7" fill="#C9A6FF" stroke="#0d1117" stroke-width="3"/>
+      <rect x="516" y="50" rx="6" width="146" height="26" fill="rgba(201,166,255,.12)" stroke="rgba(201,166,255,.42)"/>
+      <text x="589" y="67" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="13" font-weight="700" fill="#C9A6FF">[SELL] +112%</text>
+      </g>
+      <text x="60" y="346" font-family="'JetBrains Mono',monospace" font-size="11" fill="#5F6B7A">price over time &rarr;</text>
+    </svg>
+  </div>
+  <p class="chart-swipe" aria-hidden="true">&#8592; Swipe &#8594;</p>
+  <div class="chart-legend reveal">
+    <span class="lg"><span class="dot" style="background:var(--green)"></span> [BUY] &mdash; the entry</span>
+    <span class="lg"><span class="dot" style="background:#7FE0FF"></span> [TRIM] &mdash; partial + stop to breakeven</span>
+    <span class="lg"><span class="dot" style="background:#C9A6FF"></span> [SELL] &mdash; close it out</span>
   </div>
 </section>
 
@@ -662,48 +715,6 @@
 
   <div class="reassure reveal" style="max-width:760px;margin:34px auto 0;text-align:center">
     <b>New to all this?</b> You don't need to understand any of it on day one. Access includes the full options course, the beginner series and weekly live teaching sessions &mdash; how to read a signal, place your first trade, and manage risk, one step at a time.
-  </div>
-</section>
-
-<!-- SEE IT ON A CHART -->
-<section class="section wrap" style="padding-top:20px">
-  <div class="sec-head reveal" style="text-align:center;margin:0 auto">
-    <span class="eyebrow" style="justify-content:center">See it on a chart</span>
-    <h2>The same trade, start to finish.</h2>
-    <p class="lead" style="margin-left:auto;margin-right:auto">This one bought near a low, trimmed into strength, and closed before it faded. Here's how the three signals map onto real price movement &mdash; not every trade goes this way.</p>
-  </div>
-  <div class="chart-wrap reveal">
-    <svg viewBox="0 0 720 360" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Price chart showing where the buy, trim and sell signals happen">
-      <defs><linearGradient id="af" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#12E27C" stop-opacity=".22"/><stop offset="1" stop-color="#12E27C" stop-opacity="0"/></linearGradient></defs>
-      <g stroke="#1c232c" stroke-width="1"><line x1="40" y1="120" x2="694" y2="120"/><line x1="40" y1="210" x2="694" y2="210"/><line x1="40" y1="300" x2="694" y2="300"/></g>
-      <line x1="60" y1="300" x2="694" y2="300" stroke="#2E3947" stroke-width="1.5" stroke-dasharray="5 6"/>
-      <text x="690" y="316" text-anchor="end" font-family="'JetBrains Mono',monospace" font-size="11" fill="#5F6B7A">breakeven (the entry)</text>
-      <path class="chart-area" d="M60 300 L120 286 L165 293 L225 250 L285 236 L330 200 L385 212 L445 165 L515 140 L575 118 L630 92 L662 78 L662 322 L60 322 Z" fill="url(#af)"/>
-      <path class="chart-line" d="M60 300 L120 286 L165 293 L225 250 L285 236 L330 200 L385 212 L445 165 L515 140 L575 118 L630 92 L662 78" fill="none" stroke="#12E27C" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
-      <!-- BUY --><g class="chart-mark">
-      <circle cx="60" cy="300" r="7" fill="#12E27C" stroke="#0d1117" stroke-width="3"/>
-      <rect x="58" y="266" rx="6" width="150" height="26" fill="rgba(18,226,124,.14)" stroke="rgba(18,226,124,.42)"/>
-      <text x="70" y="283" font-family="'JetBrains Mono',monospace" font-size="13" font-weight="700" fill="#12E27C">[BUY] @ $0.60</text>
-      </g>
-      <!-- TRIM --><g class="chart-mark">
-      <circle cx="330" cy="200" r="7" fill="#7FE0FF" stroke="#0d1117" stroke-width="3"/>
-      <line x1="330" y1="176" x2="330" y2="192" stroke="#7FE0FF" stroke-width="1.2" stroke-dasharray="3 3"/>
-      <rect x="264" y="150" rx="6" width="132" height="26" fill="rgba(127,224,255,.12)" stroke="rgba(127,224,255,.42)"/>
-      <text x="330" y="167" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="13" font-weight="700" fill="#7FE0FF">[TRIM] +40%</text>
-      <text x="330" y="228" text-anchor="middle" font-family="'Inter',sans-serif" font-size="11.5" fill="#8A96A5">sold &frac14; &middot; stop &rarr; breakeven</text>
-      </g>
-      <!-- SELL --><g class="chart-mark">
-      <circle cx="662" cy="78" r="7" fill="#C9A6FF" stroke="#0d1117" stroke-width="3"/>
-      <rect x="516" y="50" rx="6" width="146" height="26" fill="rgba(201,166,255,.12)" stroke="rgba(201,166,255,.42)"/>
-      <text x="589" y="67" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="13" font-weight="700" fill="#C9A6FF">[SELL] +112%</text>
-      </g>
-      <text x="60" y="346" font-family="'JetBrains Mono',monospace" font-size="11" fill="#5F6B7A">price over time &rarr;</text>
-    </svg>
-  </div>
-  <div class="chart-legend reveal">
-    <span class="lg"><span class="dot" style="background:var(--green)"></span> [BUY] &mdash; the entry</span>
-    <span class="lg"><span class="dot" style="background:#7FE0FF"></span> [TRIM] &mdash; partial + stop to breakeven</span>
-    <span class="lg"><span class="dot" style="background:#C9A6FF"></span> [SELL] &mdash; close it out</span>
   </div>
 </section>
 
