@@ -119,27 +119,15 @@
   .chip .dot{width:7px;height:7px;border-radius:50%;background:var(--green);box-shadow:0 0 8px var(--glow)}
   .chip.gold .dot{background:var(--gold);box-shadow:0 0 8px rgba(245,196,81,.5)}
 
-  /* VSL player */
-  .vsl{max-width:900px;margin:46px auto 0;position:relative}
-  .vsl-frame{position:relative;border-radius:var(--r-lg);overflow:hidden;
     border:1px solid var(--line2);background:var(--surface);
     box-shadow:0 40px 120px -40px rgba(0,0,0,.8),0 0 0 1px rgba(18,226,124,.06);
     aspect-ratio:16/9}
-  .vsl-frame::after{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;
     box-shadow:inset 0 0 0 1px rgba(255,255,255,.04)}
-  .vsl-poster{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;
     background:
       radial-gradient(600px 300px at 50% 40%, rgba(18,226,124,.14), transparent 70%),
       linear-gradient(160deg,#12181F,#0B0E11);cursor:pointer}
-  .vsl-poster .play{width:76px;height:76px;border-radius:50%;background:var(--green);
     display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 10px rgba(18,226,124,.14),0 20px 50px -12px var(--glow);
     transition:transform .2s var(--ease)}
-  .vsl-poster:hover .play{transform:scale(1.06)}
-  .vsl-poster .play svg{margin-left:4px}
-  .vsl-cap{font-family:var(--f-mono);font-size:13px;letter-spacing:.06em;color:var(--muted)}
-  .vsl-cap b{color:var(--text)}
-  .vsl iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
-  .vsl-note{margin-top:14px;font-size:13px;color:var(--muted2);font-family:var(--f-mono)}
 
   /* marquee */
   .marquee{border-top:1px solid var(--line);border-bottom:1px solid var(--line);
@@ -696,16 +684,6 @@
       },{threshold:.3});
       startObs.observe(body);
     }
-  }
-
-  // VSL poster click (placeholder — logs intent; replace poster with real embed to go live)
-  const poster = document.getElementById('vslPoster');
-  if (poster){
-    const activate = () => {
-      poster.innerHTML = '<div class="vsl-cap" style="padding:24px;text-align:center;max-width:80%">Add your VSL embed in the code where marked, and this space will play your video.</div>';
-    };
-    poster.addEventListener('click', activate);
-    poster.addEventListener('keydown', (e)=>{ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); activate(); }});
   }
 
   // ---- chart draw-on ----

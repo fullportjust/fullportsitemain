@@ -51,7 +51,7 @@ This is a separate, from-scratch site — **not** the legacy WordPress site at f
 ## ⚠️ Open items / roadmap
 
 1. ~~**UNRESOLVED: pricing.**~~ **RESOLVED 2026-08-12:** Justin confirmed the price is **$99/month**. The "$99/year" figure on record elsewhere is wrong — do not "correct" the site to it. Current copy in `index.html` (hero micro-line and trial band) already says `$99/month` and is correct.
-2. VSL embed is a placeholder (`#vsl` block) — needs a real video URL or removal.
+2. ~~VSL embed placeholder~~ **REMOVED 2026-08-13.** The `#vsl` block, its JS and CSS are gone, and the hero secondary CTA now points at `/how-it-works`. If a video is added later, rebuild the block rather than restoring the placeholder.
 3. Add internal links to `how-to-read-a-trade-signal.html` from How It Works and Education (helps it rank).
 4. Build the remaining long-tail articles from the content plan (clusters: Discord options trading, Discord/trading signals, stock trading, beginner options, brand/comparison).
 5. Build a Results/Reviews page (identified gap — would own the brand SERP).

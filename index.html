@@ -119,27 +119,15 @@
   .chip .dot{width:7px;height:7px;border-radius:50%;background:var(--green);box-shadow:0 0 8px var(--glow)}
   .chip.gold .dot{background:var(--gold);box-shadow:0 0 8px rgba(245,196,81,.5)}
 
-  /* VSL player */
-  .vsl{max-width:900px;margin:46px auto 0;position:relative}
-  .vsl-frame{position:relative;border-radius:var(--r-lg);overflow:hidden;
     border:1px solid var(--line2);background:var(--surface);
     box-shadow:0 40px 120px -40px rgba(0,0,0,.8),0 0 0 1px rgba(18,226,124,.06);
     aspect-ratio:16/9}
-  .vsl-frame::after{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;
     box-shadow:inset 0 0 0 1px rgba(255,255,255,.04)}
-  .vsl-poster{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;
     background:
       radial-gradient(600px 300px at 50% 40%, rgba(18,226,124,.14), transparent 70%),
       linear-gradient(160deg,#12181F,#0B0E11);cursor:pointer}
-  .vsl-poster .play{width:76px;height:76px;border-radius:50%;background:var(--green);
     display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 10px rgba(18,226,124,.14),0 20px 50px -12px var(--glow);
     transition:transform .2s var(--ease)}
-  .vsl-poster:hover .play{transform:scale(1.06)}
-  .vsl-poster .play svg{margin-left:4px}
-  .vsl-cap{font-family:var(--f-mono);font-size:13px;letter-spacing:.06em;color:var(--muted)}
-  .vsl-cap b{color:var(--text)}
-  .vsl iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
-  .vsl-note{margin-top:14px;font-size:13px;color:var(--muted2);font-family:var(--f-mono)}
 
   /* marquee */
   .marquee{border-top:1px solid var(--line);border-bottom:1px solid var(--line);
@@ -707,7 +695,7 @@
   <p class="sub reveal">Watch 5 analysts call real trades every day, follow along from day one, and learn to read the chart yourself. Weekly live teaching included &mdash; cancel before day 14 and you're never charged.</p>
   <div class="hero-cta reveal">
     <a class="btn btn--primary btn--lg" href="https://whop.com/fullportuniversity/" target="_blank" rel="noopener">Start your free 14-day trial</a>
-    <a class="btn btn--ghost btn--lg" href="#vsl">Watch how it works</a>
+    <a class="btn btn--ghost btn--lg" href="/how-it-works">See how the signals work</a>
   </div>
   <p class="hero-micro reveal">After day 14, $99/month &mdash; billed month to month.</p>
   <div class="chips reveal">
@@ -718,16 +706,7 @@
   </div>
 
   <!-- LIVE TRAININGS -> DISCORD. Photos are real classes; do not caption them as FPU-branded events. -->
-  <div class="vsl reveal" id="vsl">
-    <div class="vsl-frame">
-      <!-- To publish: replace this .vsl-poster div with your VSL embed iframe (YouTube/Vimeo/Loom/Wistia). -->
-      <div class="vsl-poster" id="vslPoster" role="button" tabindex="0" aria-label="Play the intro video">
-        <div class="play" aria-hidden="true"><svg width="26" height="30" viewBox="0 0 26 30" fill="none"><path d="M25 13.27a2 2 0 0 1 0 3.46L3 29.6A2 2 0 0 1 0 27.86V2.14A2 2 0 0 1 3 .4l22 12.87Z" fill="#04150C"/></svg></div>
-        <div class="vsl-cap"><b>Watch first:</b> How complete beginners start trading with FPU &middot; 3 min</div>
-      </div>
-    </div>
-    <p class="vsl-note">&#9656; Drop your VSL embed here before going live.</p>
-  </div>
+  
   <div class="taught reveal">
     <div class="taught-head">
       <div>
@@ -994,16 +973,6 @@
       },{threshold:.3});
       startObs.observe(body);
     }
-  }
-
-  // VSL poster click (placeholder — logs intent; replace poster with real embed to go live)
-  const poster = document.getElementById('vslPoster');
-  if (poster){
-    const activate = () => {
-      poster.innerHTML = '<div class="vsl-cap" style="padding:24px;text-align:center;max-width:80%">Add your VSL embed in the code where marked, and this space will play your video.</div>';
-    };
-    poster.addEventListener('click', activate);
-    poster.addEventListener('keydown', (e)=>{ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); activate(); }});
   }
 
   // ---- chart draw-on ----
