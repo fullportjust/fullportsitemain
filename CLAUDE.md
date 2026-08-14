@@ -50,13 +50,22 @@ This is a separate, from-scratch site — **not** the legacy WordPress site at f
 
 ## ⚠️ Open items / roadmap
 
-1. ~~**UNRESOLVED: pricing.**~~ **RESOLVED 2026-08-12:** Justin confirmed the price is **$99/month**. The "$99/year" figure on record elsewhere is wrong — do not "correct" the site to it. Current copy in `index.html` (hero micro-line and trial band) already says `$99/month` and is correct.
-2. ~~VSL embed placeholder~~ **REMOVED 2026-08-13.** The `#vsl` block, its JS and CSS are gone, and the hero secondary CTA now points at `/how-it-works`. If a video is added later, rebuild the block rather than restoring the placeholder.
-3. Add internal links to `how-to-read-a-trade-signal.html` from How It Works and Education (helps it rank).
+1. ~~UNRESOLVED: pricing.~~ **RESOLVED:** $99/month, billed month to month. The "$99/year" figure on record elsewhere is wrong — do not "correct" the site to it.
+2. ~~VSL embed is a placeholder.~~ **DONE:** the VSL block was removed entirely. There is no video on the site — do not write copy that references one.
+3. ~~Add internal links to the guide.~~ **DONE:** linked from how-it-works (under the signal decode) and from the education roadmap.
 4. Build the remaining long-tail articles from the content plan (clusters: Discord options trading, Discord/trading signals, stock trading, beginner options, brand/comparison).
 5. Build a Results/Reviews page (identified gap — would own the brand SERP).
 6. Add X / YouTube / Discord-invite URLs to the Organization `sameAs` once available.
 7. Minor: `og-image.png` renders star glyphs as tofu boxes; logo wordmark uses a placeholder typeface.
+
+### Before pointing the domain here
+- Canonicals, `og:url`, `sitemap.xml` and the `robots.txt` Sitemap line all already use `https://fullportuniversity.com/`. They are correct **after** the switch and wrong before it.
+- **Do not submit the sitemap to Search Console until the domain resolves to this site.**
+- Set up 301s from the legacy WordPress URLs to their nearest equivalent here.
+- Re-check the OG image renders in a link preview once the domain is live.
+
+### Known duplicate
+The `+$441.65 / +$823.40` screenshot appears twice across the site — as `win-spcx.jpg` in the home wins wall and as `member-a-spcx.png` in the how-it-works trade story. Not visible on a single page, but swap one if a visitor reading both would notice.
 
 ## Workflow
 
