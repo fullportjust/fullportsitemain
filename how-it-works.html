@@ -897,6 +897,18 @@
       if(line){ line.style.transition='stroke-dashoffset 1.7s cubic-bezier(.22,.61,.36,1)'; requestAnimationFrame(function(){ line.style.strokeDashoffset='0'; }); }
       if(area) setTimeout(function(){area.classList.add('show');},500);
       marks.forEach(function(m,i){ setTimeout(function(){m.classList.add('show');}, 950 + i*380); });
+      /* On a phone the chart is a sideways scroller, so [SELL] animates in off-screen.
+         Pan along with the marks so the payoff of the sequence is actually visible. */
+      var wrap = svg.closest('.chart-wrap');
+      if (wrap && wrap.scrollWidth > wrap.clientWidth + 8){
+        setTimeout(function(){
+          var end = wrap.scrollWidth - wrap.clientWidth;
+          try { wrap.scrollTo({left: end, behavior: 'smooth'}); }
+          catch(err){ wrap.scrollLeft = end; }
+          /* if smooth scrolling didn't take, land it anyway */
+          setTimeout(function(){ if (wrap.scrollLeft < end - 4) wrap.scrollLeft = end; }, 900);
+        }, 1500);
+      }
       io.disconnect();
     }});},{threshold:.35});
     io.observe(svg);
