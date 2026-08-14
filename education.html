@@ -798,6 +798,14 @@
       });
     }, {threshold:.12, rootMargin:'0px 0px -8% 0px'});
     revs.forEach(el => io.observe(el));
+    /* Above-the-fold blocks can sit partly in view at load and never cross the
+       threshold until a scroll that may never come. Reveal what's on screen. */
+    setTimeout(function(){
+      document.querySelectorAll('.reveal:not(.in)').forEach(function(el){
+        var r = el.getBoundingClientRect();
+        if (r.top < window.innerHeight && r.bottom > 0) el.classList.add('in');
+      });
+    }, 350);
   }
 
   // marquee content

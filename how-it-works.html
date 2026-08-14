@@ -588,7 +588,7 @@
 <section class="page-hero wrap">
   <span class="eyebrow reveal">How it works</span>
   <h1 class="reveal">The trades get called out loud.</h1>
-  <p class="sub reveal">Our analysts post their trades &mdash; buy, trim, sell. You watch every step, reasoning attached.</p>
+  <p class="sub reveal">See and copy our trades live, as they happen &mdash; buy, trim, sell, with the reasoning attached.</p>
   <div class="hero-cta reveal">
     <a class="btn btn--primary btn--lg" href="https://whop.com/checkout/plan_yQftI4SvldGYW/" target="_blank" rel="noopener">Get inside &mdash; 14 days free</a>
   </div>
@@ -839,6 +839,14 @@
       });
     }, {threshold:.12, rootMargin:'0px 0px -8% 0px'});
     revs.forEach(el => io.observe(el));
+    /* Above-the-fold blocks can sit partly in view at load and never cross the
+       threshold until a scroll that may never come. Reveal what's on screen. */
+    setTimeout(function(){
+      document.querySelectorAll('.reveal:not(.in)').forEach(function(el){
+        var r = el.getBoundingClientRect();
+        if (r.top < window.innerHeight && r.bottom > 0) el.classList.add('in');
+      });
+    }, 350);
   }
 
   // marquee content
@@ -893,7 +901,9 @@
     var area = svg.querySelector('.chart-area');
     var marks = svg.querySelectorAll('.chart-mark');
     if(line){ var len=line.getTotalLength(); line.style.strokeDasharray=len; line.style.strokeDashoffset=len; }
-    var io=new IntersectionObserver(function(es){es.forEach(function(e){ if(e.isIntersecting){
+    var started=false;
+    function start(){
+      if(started) return; started=true;
       if(line){ line.style.transition='stroke-dashoffset 1.7s cubic-bezier(.22,.61,.36,1)'; requestAnimationFrame(function(){ line.style.strokeDashoffset='0'; }); }
       if(area) setTimeout(function(){area.classList.add('show');},500);
       marks.forEach(function(m,i){ setTimeout(function(){m.classList.add('show');}, 950 + i*380); });
@@ -909,9 +919,17 @@
           setTimeout(function(){ if (wrap.scrollLeft < end - 4) wrap.scrollLeft = end; }, 900);
         }, 1500);
       }
-      io.disconnect();
-    }});},{threshold:.35});
+    }
+    var io=new IntersectionObserver(function(es){
+      es.forEach(function(e){ if(e.isIntersecting){ start(); io.disconnect(); } });
+    },{threshold:.15});
     io.observe(svg);
+    /* The chart now sits above the fold, where it can be partly visible at load
+       and never cross the observer threshold. Start it if it's already on screen. */
+    setTimeout(function(){
+      var r = svg.getBoundingClientRect();
+      if (r.top < window.innerHeight && r.bottom > 0){ start(); io.disconnect(); }
+    }, 400);
   })();
 
   // ---- count up ----
