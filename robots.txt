@@ -24,4 +24,4 @@ Allow: /
 User-agent: Google-Extended
 Allow: /
 
-Sitemap: https://fullportuniversity.com/sitemap.xml
+Sitemap: https://www.fullportuniversity.com/sitemap.xml

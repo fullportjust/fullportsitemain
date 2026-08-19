@@ -1,6 +1,15 @@
 {
   "cleanUrls": true,
   "trailingSlash": false,
+  "redirects": [
+    { "source": "/howitworks", "destination": "/how-it-works", "permanent": true },
+    { "source": "/challenge", "destination": "/", "permanent": true },
+    { "source": "/success", "destination": "/#wins", "permanent": true },
+    { "source": "/blog/:path*", "destination": "/", "permanent": true },
+    { "source": "/category/:path*", "destination": "/", "permanent": true },
+    { "source": "/tag/:path*", "destination": "/", "permanent": true },
+    { "source": "/author/:path*", "destination": "/", "permanent": true }
+  ],
   "headers": [
     {
       "source": "/(.*)",

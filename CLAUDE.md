@@ -38,7 +38,7 @@ This is a separate, from-scratch site — **not** the legacy WordPress site at f
 
 - JSON-LD on every page: `Organization` (with `sameAs`), plus `WebSite` + `FAQPage` on home, `Course` + `FAQPage` on education, `FAQPage` on how-it-works, and `Article` + `FAQPage` + `BreadcrumbList` on the guide. Every page showing a FAQ carries `FAQPage`. Keep it valid JSON and keep FAQ schema mirroring the visible FAQ text.
 - `sitemap.xml`, `robots.txt` (explicitly welcomes AI crawlers: GPTBot, ClaudeBot, PerplexityBot, etc.), and `llms.txt` exist at root.
-- Canonical / OG / sitemap URLs all use `https://fullportuniversity.com/` — correct only once this site IS that domain. **On the staging Vercel URL, do not submit the sitemap to Search Console.**
+- Canonical / OG / sitemap URLs all use `https://www.fullportuniversity.com/`. The apex 308-redirects to `www`, so **`www` is the canonical host** — never use the bare apex in a canonical, `og:url`, sitemap `<loc>` or the `robots.txt` Sitemap line, or every URL self-references through a redirect.
 - **Strategy:** don't chase head terms ("options trading"); win long-tail + Discord + brand/comparison terms via content. Keyword/content plan lives in `FPU-seo-aeo-plan.md` (kept outside the repo). The first article (`how-to-read-a-trade-signal.html`) is done.
 
 ## Key facts
@@ -60,11 +60,11 @@ This is a separate, from-scratch site — **not** the legacy WordPress site at f
 6. Add X / YouTube / Discord-invite URLs to the Organization `sameAs` once available.
 7. Minor: `og-image.png` renders star glyphs as tofu boxes; logo wordmark uses a placeholder typeface.
 
-### Before pointing the domain here
-- Canonicals, `og:url`, `sitemap.xml` and the `robots.txt` Sitemap line all already use `https://fullportuniversity.com/`. They are correct **after** the switch and wrong before it.
-- **Do not submit the sitemap to Search Console until the domain resolves to this site.**
-- Set up 301s from the legacy WordPress URLs to their nearest equivalent here.
-- Re-check the OG image renders in a link preview once the domain is live.
+### Domain switch — DONE (20 Aug 2026)
+- The domain is live and this site serves it. `www.fullportuniversity.com` is canonical; the apex 308-redirects to it.
+- The legacy WordPress install is **gone** — its origin (`full-port-university-e27e9f.ingress-bonde.ewp.live`) returns a host-level 404. Nothing to migrate or archive from it.
+- 301s from the legacy WordPress URLs live in `vercel.json` under `redirects`. **Never add a catch-all `/(.*)` source there** — Vercel evaluates `redirects` before the filesystem check, so it would swallow `/education`, `/how-it-works` and every other real page. `trailingSlash: false` already strips trailing slashes before matching, so write `/howitworks`, not both forms.
+- Still open: submit the sitemap in Search Console, request indexing on the new pages, and re-check the OG image renders in a link preview.
 
 ### Known duplicate
 The `+$441.65 / +$823.40` screenshot appears twice across the site — as `win-spcx.jpg` in the home wins wall and as `member-a-spcx.png` in the how-it-works trade story. Not visible on a single page, but swap one if a visitor reading both would notice.

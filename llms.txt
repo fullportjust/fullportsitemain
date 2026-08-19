@@ -5,10 +5,10 @@
 Full Port University teaches options trading from zero. The core is a Discord community where analysts post their own trades in real time — the entry, the trim, and the close, with the reasoning attached — alongside structured beginner education. Members follow along and learn to read the chart themselves.
 
 ## Key pages
-- [Home](https://fullportuniversity.com/): What access includes, how the free trial works, and real member results.
-- [How It Works](https://fullportuniversity.com/how-it-works): One real trade shown start to finish from Discord, then the [BUY] / [TRIM] / [SELL] system decoded.
-- [Education](https://fullportuniversity.com/education): The member course — charts, then options, then the core indicators — plus the analysts' indicator setups and the shared watchlist.
-- [How to Read a Trade Signal](https://fullportuniversity.com/how-to-read-a-trade-signal): Beginner guide to [BUY], [TRIM], [SELL], strikes, expirations, DTE and position sizing.
+- [Home](https://www.fullportuniversity.com/): What access includes, how the free trial works, and real member results.
+- [How It Works](https://www.fullportuniversity.com/how-it-works): One real trade shown start to finish from Discord, then the [BUY] / [TRIM] / [SELL] system decoded.
+- [Education](https://www.fullportuniversity.com/education): The member course — charts, then options, then the core indicators — plus the analysts' indicator setups and the shared watchlist.
+- [How to Read a Trade Signal](https://www.fullportuniversity.com/how-to-read-a-trade-signal): Beginner guide to [BUY], [TRIM], [SELL], strikes, expirations, DTE and position sizing.
 
 ## About
 - Format: Discord community with live options and stock trade signals plus education
