@@ -33,6 +33,8 @@ This is a separate, from-scratch site — **not** the legacy WordPress site at f
 - **Signal system on this site is three steps:** `[BUY]` → `[TRIM]` → `[SELL]`. (Older FPU properties reference a `[LOAD]` step — this site does not use it.) Position sizing tiers: FULL / SMALL / LOTTO. Risk framed around DTE (days to expiration).
 - **Member count:** use "10,000+." Other FPU properties show inconsistent figures (4,500 / 7,000) — flag, don't copy.
 - **Images:** content images (profit screenshots, etc.) are external, optimized, lazy-loaded files — **not base64**. The logo, favicon and apple-touch icon are external files too. Keep pages light; the site was once 49% base64 by weight on one page. Resize before committing: nothing should ship at multiple megapixels to render in a 280px card.
+- **This is marketing copy. Keep it positive.** Do not write sections that list what the reader does *not* get, what a tier excludes, caveats, downsides, or "honest limits" framing. Do not add pre-emptive clarifications, hedges or expectation-setting that nobody asked for. Every section should give the reader a reason to move forward. If a limitation genuinely needs stating, ask Justin first — he will say so when he wants it. Differentiation between tiers happens inside the Discord community, not on the site.
+  - **This does not override compliance.** The header/footer risk disclosures, "educational only — not financial advice", "results not typical", the stop-fill caveat and the affiliate disclosure are legally load-bearing and always stay. "Positive" means no self-inflicted negative *selling*, never the removal of a required disclosure.
 
 ## SEO / AEO (already implemented — maintain it)
 
