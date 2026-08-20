@@ -473,6 +473,50 @@
     .hamburger{display:flex}
     .nav-cta .btn--primary{padding:11px 16px;font-size:14px}
   }
+  /* live trainings -> now in discord (hero credibility strip) */
+  .taught{margin-top:44px;padding-top:30px;border-top:1px solid var(--line)}
+  .taught-head{display:flex;align-items:flex-end;justify-content:space-between;gap:20px;flex-wrap:wrap;margin-bottom:20px}
+  .taught-head h2{font-size:clamp(20px,2.4vw,26px);letter-spacing:-.01em;margin-top:6px}
+  .taught-head .t-note{color:var(--muted);font-size:15px;max-width:46ch;margin-bottom:2px}
+  .taught-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+  .t-free{display:flex;align-items:flex-start;gap:11px;margin-top:16px;background:var(--green-soft);
+    border:1px solid rgba(18,226,124,.22);border-radius:12px;padding:13px 16px;font-size:15px;color:var(--muted);text-align:left}
+  .t-free .c{color:var(--green);flex:none;line-height:1.45}
+  .t-free b{color:var(--text);font-weight:600}
+  .t-swipe{display:none;margin-top:10px;font-family:var(--f-mono);font-size:11px;letter-spacing:.1em;color:var(--muted2)}
+  .tshot{position:relative;margin:0;border:1px solid var(--line2);border-radius:14px;overflow:hidden;
+    background:var(--surface);aspect-ratio:1/1;transition:border-color .3s,transform .3s var(--ease)}
+  .tshot:hover{border-color:rgba(18,226,124,.35);transform:translateY(-3px)}
+  .tshot img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s var(--ease)}
+  .tshot:hover img{transform:scale(1.04)}
+  .tshot::after{content:"";position:absolute;inset:0;pointer-events:none;
+    background:linear-gradient(180deg,transparent 42%,rgba(11,14,17,.88))}
+  .tshot .cap{position:absolute;z-index:1;left:12px;right:12px;bottom:10px;
+    font-family:var(--f-mono);font-size:11px;letter-spacing:.03em;line-height:1.35;color:#cfd8e3}
+  .tshot .cap b{display:block;color:var(--green);font-weight:500;font-size:10px;letter-spacing:.1em;margin-top:4px}
+  /* the hero is centre-aligned; this block reads better ranged left once it is two columns */
+  @media (min-width:641px){.taught-head{text-align:left;align-items:flex-end}.taught-head .eyebrow{justify-content:flex-start}
+    .taught-head .t-note{text-align:left;max-width:44ch}}
+  @media (max-width:900px){.taught-grid{grid-template-columns:repeat(2,1fr)}}
+  /* mobile: swipeable strip so each photo stays large enough to read */
+  @media (max-width:640px){
+    .taught{margin-top:32px;padding-top:24px}
+    .taught-head{gap:10px;margin-bottom:16px}
+    .taught-head h2{margin-top:4px}
+    .taught-head .t-note{font-size:14.5px;max-width:none}
+    .taught-grid{display:flex;gap:10px;overflow-x:auto;scroll-snap-type:x mandatory;
+      -webkit-overflow-scrolling:touch;scrollbar-width:none;
+      margin:0 -18px;padding:2px 18px;scroll-padding-inline:18px}
+    .taught-grid::-webkit-scrollbar{display:none}
+    .tshot{flex:0 0 72%;scroll-snap-align:start;scroll-snap-stop:always}
+    .tshot:hover{transform:none}
+    /* bigger caption type: the card is ~280px on a phone, 11px reads as fine print */
+    .tshot .cap{left:11px;right:11px;bottom:11px;font-size:12px}
+    .tshot .cap b{font-size:11px;letter-spacing:.08em}
+    .t-free{font-size:14.5px;padding:12px 14px;gap:9px}
+    .t-swipe{display:block}
+  }
+  @media (prefers-reduced-motion:reduce){.tshot,.tshot img{transition:none}.tshot:hover{transform:none}.tshot:hover img{transform:none}}
   /* member wins wall (masonry) */
   .wins-wall{columns:3;column-gap:18px;margin-top:48px}
   .wcard{break-inside:avoid;margin:0 0 18px}
@@ -653,6 +697,37 @@
     <li><span class="k">Trades stocks</span><span class="v">You trade stocks already and want a room where calls get explained, not just posted.</span></li>
     <li><span class="k">Learning</span><span class="v">You want the education, the indicators and the watchlist without paying for them.</span></li>
   </ul>
+</section>
+
+<section class="section wrap" id="taught" style="padding-top:20px">
+  <div class="taught reveal" style="border-top:0;padding-top:0;margin-top:0">
+    <div class="taught-head">
+      <div>
+        <span class="eyebrow">Taught live</span>
+        <h2>We filled rooms teaching this. <span class="hl">Now we do it every day.</span></h2>
+      </div>
+      <p class="t-note">Real classes, real students. The same teaching now runs inside Discord, daily, from anywhere.</p>
+    </div>
+    <div class="taught-grid" role="group" tabindex="0" aria-label="Photos from our live in-person classes">
+      <figure class="tshot">
+        <img src="teach-chart-breakdown.jpg" alt="Justin breaking down a live chart on screen for a room of students" loading="lazy" decoding="async" />
+        <figcaption class="cap">Live chart breakdowns<b>Now daily in Discord</b></figcaption>
+      </figure>
+      <figure class="tshot">
+        <img src="teach-classroom.jpg" alt="Justin teaching a room of students about setting realistic expectations" loading="lazy" decoding="async" />
+        <figcaption class="cap">Risk &amp; expectations<b>In the education</b></figcaption>
+      </figure>
+      <figure class="tshot">
+        <img src="teach-workshop.jpg" alt="Justin leading a small-group trading workshop around a conference table" loading="lazy" decoding="async" />
+        <figcaption class="cap">Small-group Q&amp;A<b>Ask us anytime</b></figcaption>
+      </figure>
+      <figure class="tshot">
+        <img src="teach-seminar.jpg" alt="Justin presenting a trading seminar to a seated classroom" loading="lazy" decoding="async" />
+        <figcaption class="cap">Full seminars<b>Now live in the server</b></figcaption>
+      </figure>
+    </div>
+    <p class="t-swipe" aria-hidden="true">&#8592; Swipe &#8594;</p>
+  </div>
 </section>
 
 <section class="section wrap" id="faq">
