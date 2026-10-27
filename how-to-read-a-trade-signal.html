@@ -718,10 +718,20 @@
 
   <p class="lede reveal">A trade signal is how an analyst shows their trade in real time &mdash; when they opened it, when they took some profit off the table, and when they closed. At Full Port University, every signal uses three tags: <span class="tag-buy">[BUY]</span> to open a position, <span class="tag-trim">[TRIM]</span> to sell part of it and lock in gains, and <span class="tag-sell">[SELL]</span> to close what&rsquo;s left. Learn those three tags and you can follow along &mdash; even on day one.</p>
 
-  <h2 class="reveal">What a trade signal actually is</h2>
+  <div class="callout reveal" style="border-left:3px solid var(--green)"><b>TL;DR</b>
+    <ul style="margin:10px 0 0;padding-left:20px;line-height:1.7">
+      <li>A signal names one options contract and what the analyst did with it.</li>
+      <li><span class="tag-buy">[BUY]</span> opens, <span class="tag-trim">[TRIM]</span> takes partial profit, <span class="tag-sell">[SELL]</span> closes &mdash; every trade has an exit.</li>
+      <li>Read a buy alert as: ticker, expiration, strike, call or put, entry price (&times; 100 = dollar cost).</li>
+      <li>Size by risk: Full 3&ndash;5% of your account, Small 1&ndash;3%, Lotto under 1%.</li>
+      <li>Fewer days to expiration (DTE) is cheaper but riskier; beginners should lean to more DTE.</li>
+    </ul>
+  </div>
+
+  <h2 class="reveal">What is a trade signal?</h2>
   <p class="reveal">A signal is a short message that names a specific options contract and what the analyst did with it. You get the ticker, the expiration, the strike, whether it&rsquo;s a call or a put, and the price the analyst paid. Then, as the trade plays out, follow-up tags show when they took profit and when they exited. That&rsquo;s the point of being inside with live analysts: you see a full trade managed in real time, not just an entry.</p>
 
-  <h2 class="reveal">The three tags, in order</h2>
+  <h2 class="reveal">What do [BUY], [TRIM] and [SELL] mean?</h2>
 
   <h3 class="reveal"><span class="tag-buy">[BUY]</span> &mdash; open the position</h3>
   <p class="reveal">A buy signal is the entry. It names the exact contract and the price the analyst paid. Here&rsquo;s what one looks like inside Discord:</p>
@@ -737,7 +747,7 @@
   <p class="reveal">A sell signal closes what&rsquo;s left of the position. The trade is done &mdash; the trim was booked earlier, and the rest is out. No signal is a &ldquo;hold forever&rdquo;; every trade has an exit.</p>
   <div class="alert-ex reveal"><span class="who">Kenny <span>Analyst</span></span><span class="tag-sell">[SELL]</span> Closing the rest of XOM here. Clean trade &mdash; on to the next.</div>
 
-  <h2 class="reveal">Reading a buy alert, piece by piece</h2>
+  <h2 class="reveal">How do you read an options buy alert?</h2>
   <ul class="reveal">
     <li><strong>Ticker</strong> &mdash; the stock or ETF (e.g. XOM, SPY, QQQ).</li>
     <li><strong>Expiration</strong> &mdash; the date the contract expires. Sooner = cheaper but riskier.</li>
@@ -746,18 +756,37 @@
     <li><strong>Entry price</strong> &mdash; what the analyst paid per contract. Multiply by 100 for the dollar cost.</li>
   </ul>
 
-  <h2 class="reveal">Position sizing: Full, Small, Lotto</h2>
-  <p class="reveal">Signals often include how big the play is meant to be. Sizing is how you manage risk &mdash; not every trade deserves the same amount of money.</p>
+  <h2 class="reveal">How much should you put on each signal?</h2>
+  <p class="reveal">Size each trade by how much of your account you&rsquo;re risking, not by how confident you feel. A rough rule: <strong>Full</strong> is 3&ndash;5% of your account, <strong>Small</strong> is 1&ndash;3%, and <strong>Lotto</strong> is under 1%. Not every trade deserves the same amount of money.</p>
   <ul class="reveal">
     <li><strong>Full</strong> &mdash; a standard, higher-conviction position.</li>
     <li><strong>Small</strong> &mdash; reduced size for a riskier or more speculative setup.</li>
     <li><strong>Lotto</strong> &mdash; a tiny, high-risk / high-reward flyer. Only money you&rsquo;re completely fine losing.</li>
   </ul>
 
-  <h2 class="reveal">DTE and why it matters</h2>
+  <div class="reveal" style="overflow-x:auto;margin:18px 0">
+    <table style="width:100%;border-collapse:collapse;font-size:15px;background:var(--surface);border:1px solid var(--line);border-radius:12px">
+      <tr><th style="text-align:left;padding:10px 12px;border-bottom:1px solid var(--line2);color:var(--muted);font-family:var(--f-mono);font-size:12px;white-space:nowrap">Size</th><th style="text-align:left;padding:10px 12px;border-bottom:1px solid var(--line2);color:var(--muted);font-family:var(--f-mono);font-size:12px;white-space:nowrap">% of account</th><th style="text-align:left;padding:10px 12px;border-bottom:1px solid var(--line2);color:var(--muted);font-family:var(--f-mono);font-size:12px;white-space:nowrap">$500 account</th><th style="text-align:left;padding:10px 12px;border-bottom:1px solid var(--line2);color:var(--muted);font-family:var(--f-mono);font-size:12px;white-space:nowrap">$2,000 account</th><th style="text-align:left;padding:10px 12px;border-bottom:1px solid var(--line2);color:var(--muted);font-family:var(--f-mono);font-size:12px;white-space:nowrap">$10,000 account</th></tr>
+      <tr><td style="padding:10px 12px;border-bottom:1px solid var(--line)"><strong>Full</strong></td><td style="padding:10px 12px;border-bottom:1px solid var(--line)">3&ndash;5%</td><td style="padding:10px 12px;border-bottom:1px solid var(--line)">$15&ndash;25</td><td style="padding:10px 12px;border-bottom:1px solid var(--line)">$60&ndash;100</td><td style="padding:10px 12px;border-bottom:1px solid var(--line)">$300&ndash;500</td></tr>
+      <tr><td style="padding:10px 12px;border-bottom:1px solid var(--line)"><strong>Small</strong></td><td style="padding:10px 12px;border-bottom:1px solid var(--line)">1&ndash;3%</td><td style="padding:10px 12px;border-bottom:1px solid var(--line)">$5&ndash;15</td><td style="padding:10px 12px;border-bottom:1px solid var(--line)">$20&ndash;60</td><td style="padding:10px 12px;border-bottom:1px solid var(--line)">$100&ndash;300</td></tr>
+      <tr><td style="padding:10px 12px;border-bottom:1px solid var(--line)"><strong>Lotto</strong></td><td style="padding:10px 12px;border-bottom:1px solid var(--line)">under 1%</td><td style="padding:10px 12px;border-bottom:1px solid var(--line)">under $5</td><td style="padding:10px 12px;border-bottom:1px solid var(--line)">under $20</td><td style="padding:10px 12px;border-bottom:1px solid var(--line)">under $100</td></tr>
+    </table>
+  </div>
+  <p class="reveal">These are rough risk-per-trade budgets, not the number of contracts &mdash; one contract can cost more than a small account&rsquo;s Lotto budget, which is exactly why sizing matters. The full breakdown is in the <a href="/education" style="color:var(--green)">member course</a>.</p>
+
+  <h2 class="reveal">How do you place a signal as a limit order on Robinhood or Webull?</h2>
+  <p class="reveal">You don&rsquo;t copy the analyst&rsquo;s fill &mdash; you place your own order at a price you choose. A <strong>limit order</strong> sets the most you&rsquo;ll pay, so you don&rsquo;t overpay when premiums move fast. The steps are the same idea in either app:</p>
+  <ol class="reveal">
+    <li>Search the ticker, open its <strong>options</strong>, and pick the <strong>expiration</strong> and <strong>strike</strong> from the signal (call or put).</li>
+    <li>Choose <strong>Buy</strong>, set the order type to <strong>Limit</strong>, and enter a price at or near the analyst&rsquo;s entry.</li>
+    <li>Set the number of <strong>contracts</strong> to fit your size (remember: 1 contract = 100 shares), review, and submit.</li>
+  </ol>
+  <p class="reveal">If price has already run well past the entry, it&rsquo;s usually better to wait for the next signal than to chase it.</p>
+
+  <h2 class="reveal">What does DTE mean on a trade signal?</h2>
   <p class="reveal"><strong>DTE</strong> means <strong>Days To Expiration</strong> &mdash; how long until the contract expires. Fewer days means the option is cheaper, but time decay eats its value faster, so it&rsquo;s less forgiving if the trade moves against you. More days costs more but gives the trade room to work. As a beginner, leaning toward more DTE is usually the safer way to learn.</p>
 
-  <h2 class="reveal">Putting it together</h2>
+  <h2 class="reveal">What does a full trade look like from entry to exit?</h2>
   <p class="reveal">One full trade, start to finish: you get the <span class="tag-buy">[BUY]</span> and open XOM $104 calls at $2.20. A day later the analyst posts <span class="tag-trim">[TRIM]</span> at +40% &mdash; you sell most of your contracts and bank the profit, moving your stop to breakeven on the rest. Then a <span class="tag-sell">[SELL]</span> closes the remainder. You watched a complete trade instead of a tip &mdash; entry, trim, exit &mdash; and picked up the <em>why</em> at each step. That's a normal day inside.</p>
 
   <h2 class="reveal">What does a losing trade look like?</h2>
