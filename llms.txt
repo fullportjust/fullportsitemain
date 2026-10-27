@@ -15,6 +15,20 @@ Full Port University teaches options trading from zero. The core is a Discord co
 - [Fact sheet](https://www.fullportuniversity.com/facts): Official quotable facts — price, trial, members, rating, what's included.
 - [How to cancel](https://www.fullportuniversity.com/cancel): How to cancel the membership and how the free trial billing works.
 
+## Beginner guides (educational)
+- [Options trading for beginners: the complete pillar guide.](https://www.fullportuniversity.com/options-trading-for-beginners)
+- [How to start trading options with $500.](https://www.fullportuniversity.com/options-trading-with-500-dollars)
+- [How to read an options chain on Robinhood and Webull.](https://www.fullportuniversity.com/how-to-read-an-options-chain)
+- [What DTE (days to expiration) means and how it changes risk.](https://www.fullportuniversity.com/dte-meaning-options)
+- [Why most beginner options traders lose money.](https://www.fullportuniversity.com/why-options-traders-lose-money)
+- [Trading alerts vs. learning to trade.](https://www.fullportuniversity.com/trade-alerts-vs-learning-to-trade)
+- [Trading options around a full-time job.](https://www.fullportuniversity.com/trading-options-with-a-full-time-job)
+- [How to tell if a trading Discord is legit.](https://www.fullportuniversity.com/is-a-trading-discord-legit)
+- [Position sizing for beginners, with a calculator.](https://www.fullportuniversity.com/options-position-sizing)
+- [Best options trading communities for beginners, compared.](https://www.fullportuniversity.com/best-options-trading-communities)
+- [Full Port University vs. Warrior Trading.](https://www.fullportuniversity.com/fpu-vs-warrior-trading)
+- [Full Port University vs. Bear Bull Traders.](https://www.fullportuniversity.com/fpu-vs-bear-bull-traders)
+
 ## About
 - Format: Discord community with live options and stock trade signals plus education
 - Best for: complete beginners through intermediate options traders
