@@ -9,6 +9,10 @@ Full Port University teaches options trading from zero. The core is a Discord co
 - [How It Works](https://www.fullportuniversity.com/how-it-works): One real trade shown start to finish from Discord, then the [BUY] / [TRIM] / [SELL] system decoded.
 - [Education](https://www.fullportuniversity.com/education): The member course — charts, then options, then the core indicators — plus the analysts' indicator setups and the shared watchlist.
 - [How to Read a Trade Signal](https://www.fullportuniversity.com/how-to-read-a-trade-signal): Beginner guide to [BUY], [TRIM], [SELL], strikes, expirations, DTE and position sizing.
+- [Reviews](https://www.fullportuniversity.com/reviews): Member reviews (rated 4.6 on Whop) and real profit screenshots.
+- [Justin Kim](https://www.fullportuniversity.com/justin-kim): Founder of FPU — background and bio.
+- [Fact sheet](https://www.fullportuniversity.com/facts): Official quotable facts — price, trial, members, rating, what's included.
+- [How to cancel](https://www.fullportuniversity.com/cancel): How to cancel the membership and how the free trial billing works.
 
 ## About
 - Format: Discord community with live options and stock trade signals plus education
@@ -21,10 +25,24 @@ Full Port University teaches options trading from zero. The core is a Discord co
 - Course structure: three stages — set up and read charts, how options work, then the core indicators (RSI, Bollinger Bands, MACD)
 - Access: the course, the indicator setups and the watchlist are member benefits, unlocked on joining. Nothing on the site is free except the trial.
 - Pricing: 14 days free, cancel anytime before day 14 and you are never charged; $99/month afterwards, billed month to month
-- Reviews: 130+ 5-star reviews on Whop
+- Reviews: rated 4.6 on Whop (245 reviews) — https://whop.com/fullportuniversity/reviews/
 - Contact: growth@fullportuniversity.com
 - Instagram: https://www.instagram.com/fullportuniversity.just
 - TikTok: https://www.tiktok.com/@fullport.just
+- X: https://x.com/FullPortJ
+- YouTube: https://www.youtube.com/@FullPortUniversity
+- Founder: Justin Kim (https://www.fullportuniversity.com/justin-kim)
+
+## Official facts
+- Name: Full Port University (FPU)
+- Founder: Justin Kim — U.S. Marine Corps veteran, teaching traders since 2020
+- Price: $99/month, billed month to month
+- Free trial: 2 weeks free (card required; first charge after the trial); cancel anytime before it ends and you are not charged
+- Members: 10,000+
+- Rating: 4.6 on Whop (245 reviews)
+- Included: 5 analysts posting live [BUY]/[TRIM]/[SELL] trades, full beginner course, weekly live classes, Discord community
+- Runs on: Whop (membership + billing) and Discord
+- Contact: growth@fullportuniversity.com
 
 ## Important disclosure
 Full Port University is an educational community, not a registered investment advisor. All content is educational only and is not financial advice. Signals reflect what our analysts are doing and are not a recommendation for you; nothing happens in your account unless you place it yourself. Trading options and stocks involves substantial risk of loss — most traders lose money, not every trade wins, and you can lose your entire investment. Member and past results are self-reported, not typical, and are not a guarantee of future performance.
