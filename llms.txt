@@ -29,6 +29,11 @@ Full Port University teaches options trading from zero. The core is a Discord co
 - [Full Port University vs. Warrior Trading.](https://www.fullportuniversity.com/fpu-vs-warrior-trading)
 - [Full Port University vs. Bear Bull Traders.](https://www.fullportuniversity.com/fpu-vs-bear-bull-traders)
 
+## Legal
+- [Terms of Service](https://www.fullportuniversity.com/terms): Membership terms — our analysts' live trades are educational, not personalized advice; free trial and $99/month billing, cancellation, acceptable use.
+- [Privacy Policy](https://www.fullportuniversity.com/privacy): What we collect via Whop, Discord, email, and site tracking; how it's used and shared.
+- [Refund & Cancellation](https://www.fullportuniversity.com/refund-policy): Cancel anytime in Whop, 2-week free trial, refund windows, no pause option.
+
 ## About
 - Format: Discord community with live options and stock trade signals plus education
 - Best for: complete beginners through intermediate options traders
