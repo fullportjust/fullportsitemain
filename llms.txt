@@ -1,6 +1,6 @@
 # Full Port University
 
-> Full Port University (FPU) is a beginner-friendly options and stock trading community on Discord. Membership gives you access to 5 analysts posting live [BUY] / [TRIM] / [SELL] trade signals, a full beginner options course, weekly live teaching sessions, and 10,680 members. A 14-day free trial is available through Whop; membership is $99/month afterwards, billed month to month.
+> Full Port University (FPU) is a beginner-friendly options and stock trading community on Discord. Membership gives you access to 5 analysts sharing their own trades live, tagged [BUY] / [TRIM] / [SELL], a full beginner options course, weekly live teaching sessions, and 10,680 members. A 14-day free trial is available through Whop; membership is $99/month afterwards, billed month to month.
 
 Full Port University teaches options trading from zero. The core is a Discord community where analysts post their own trades in real time — the entry, the trim, and the close, with the reasoning attached — alongside structured beginner education. Members follow along and learn to read the chart themselves.
 
@@ -33,6 +33,7 @@ Full Port University teaches options trading from zero. The core is a Discord co
 - [Terms of Service](https://www.fullportuniversity.com/terms): Membership terms — our analysts' live trades are educational, not personalized advice; free trial and $99/month billing, cancellation, acceptable use.
 - [Privacy Policy](https://www.fullportuniversity.com/privacy): What we collect via Whop, Discord, email, and site tracking; how it's used and shared.
 - [Refund & Cancellation](https://www.fullportuniversity.com/refund-policy): Cancel anytime in Whop, 2-week free trial, refund windows, no pause option.
+- [EULA](https://www.fullportuniversity.com/eula): How you may use our lessons and materials; the trades analysts share are educational examples, not recommendations.
 
 ## About
 - Format: Discord community with live options and stock trade signals plus education
@@ -60,7 +61,7 @@ Full Port University teaches options trading from zero. The core is a Discord co
 - Free trial: 2 weeks free (card required; first charge after the trial); cancel anytime before it ends and you are not charged
 - Members: 10,680
 - Rating: 4.6 on Whop (245 reviews)
-- Included: 5 analysts posting live [BUY]/[TRIM]/[SELL] trades, full beginner course, weekly live classes, Discord community
+- Included: 5 analysts sharing their own trades live, tagged [BUY]/[TRIM]/[SELL], full beginner course, weekly live classes, Discord community
 - Runs on: Whop (membership + billing) and Discord
 - Contact: growth@fullportuniversity.com
 
