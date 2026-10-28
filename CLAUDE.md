@@ -4,7 +4,7 @@ Context for Claude Code. Read this before making changes.
 
 ## The point of this project
 
-Full Port University (FPU) is a beginner-friendly options and stock trading education + signals community on Discord, run by Justin Kim and monetized through Whop (a 14-day free trial that converts to paid membership). The core offer is access: live `[BUY]` → `[TRIM]` → `[SELL]` trade signals from 5 analysts, the full beginner course, weekly live teaching, and a 10,000+ member community. **Nothing is free except the 14-day trial** — the course is a member benefit and must never be called free.
+Full Port University (FPU) is a beginner-friendly options and stock trading education + signals community on Discord, run by Justin Kim and monetized through Whop (a 14-day free trial that converts to paid membership). The core offer is access: live `[BUY]` → `[TRIM]` → `[SELL]` trade signals from 5 analysts, the full beginner course, weekly live teaching, and a 10,680-member community. **Nothing is free except the 14-day trial** — the course is a member benefit and must never be called free.
 
 This repo is a high-converting marketing website whose job is to take a cold beginner — someone who has never traded options — and move them into the free Whop trial. Everything on the site serves that funnel. The positioning that makes FPU different from competitors (e.g. Capital Club, a solo-founder swing-trading Discord) is **beginner-first teaching + 5 analysts + options/DTE specialization**. Lead with "you can learn this from zero," use signals and member results as proof, push the free trial hard.
 
@@ -31,7 +31,7 @@ This is a separate, from-scratch site — **not** the legacy WordPress site at f
 - **Disclosures live in the footer only.** Keep one consolidated risk disclosure in the footer of every page. Do **not** add risk or trade disclaimers anywhere else — no header/above-footer risk strip, no "results not typical" notes under profit screenshots, no inline caveats in the hero or body. The footer note covers the whole site. (Separately: never add "no credit card required" — Whop captures payment, so it would be false — and don't frame the trial as a profit guarantee; the approved framing is "2 weeks free, cancel anytime before your 2 weeks are up, never charged.")
 - **Authenticity is non-negotiable.** Profit/results imagery must be real screenshots from the Discord `#post-profits` channel with accurate figures — never fabricated composites, never inflated numbers, never duplicated trades presented as different ones.
 - **Signal system on this site is three steps:** `[BUY]` → `[TRIM]` → `[SELL]`. (Older FPU properties reference a `[LOAD]` step — this site does not use it.) Position sizing tiers: FULL / SMALL / LOTTO. Risk framed around DTE (days to expiration).
-- **Member count:** use "10,000+." Other FPU properties show inconsistent figures (4,500 / 7,000) — flag, don't copy.
+- **Member count:** use "10,680" (the official figure; live Whop reads ~10,676 and drifts daily). Other FPU properties show inconsistent figures (4,500 / 7,000) — flag, don't copy.
 - **Images:** content images (profit screenshots, etc.) are external, optimized, lazy-loaded files — **not base64**. The logo, favicon and apple-touch icon are external files too. Keep pages light; the site was once 49% base64 by weight on one page. Resize before committing: nothing should ship at multiple megapixels to render in a 280px card.
 - **This is marketing copy. Keep it positive.** Do not write sections that list what the reader does *not* get, what a tier excludes, caveats, downsides, or "honest limits" framing. Do not add pre-emptive clarifications, hedges or expectation-setting that nobody asked for. Every section should give the reader a reason to move forward. If a limitation genuinely needs stating, ask Justin first — he will say so when he wants it. Differentiation between tiers happens inside the Discord community, not on the site.
   - **Keep the single footer disclosure.** The one consolidated footer risk disclosure stays on every page. Beyond that, don't add disclaimers, caveats, "results not typical" notes, or hedges in the body or hero.
@@ -49,7 +49,7 @@ This is a separate, from-scratch site — **not** the legacy WordPress site at f
 - Support email: `growth@fullportuniversity.com`
 - Socials in schema + footer: Instagram `@fullportuniversity.just`, TikTok `@fullport.just`. (No public X / YouTube / Discord-invite URL on record yet.)
 - Price: **$99/month, billed month to month**. Trial: 14 days free, cancel before day 14, never charged.
-- Facts that must stay consistent: **5 analysts**, **10,000+ members**, **130+ 5-star reviews**, **24/7 Discord access**.
+- Facts that must stay consistent: **5 analysts**, **10,680 members**, **4.6 rating on Whop (245 reviews)**, **24/7 Discord access**.
 - The word "mentorship" is banned in visible copy, and the Advisory Program footer link has been removed.
 
 ## ⚠️ Open items / roadmap
