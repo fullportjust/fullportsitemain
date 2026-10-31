@@ -567,6 +567,7 @@
       <a href="/how-it-works">How it works</a>
       <a href="/education">Education</a>
       <a href="/reviews">Reviews</a>
+      <a href="/community-profits">Profits</a>
     </nav>
     <div class="nav-cta">
       <a class="btn btn--primary" href="https://whop.com/checkout/plan_yQftI4SvldGYW/" target="_blank" rel="noopener">Start free trial</a>
@@ -578,6 +579,7 @@
     <a class="mlink" href="/how-it-works">How it works</a>
     <a class="mlink" href="/education">Education</a>
     <a class="mlink" href="/reviews">Reviews</a>
+    <a class="mlink" href="/community-profits">Profits</a>
     <a class="btn btn--primary btn--block" href="https://whop.com/checkout/plan_yQftI4SvldGYW/" target="_blank" rel="noopener">Start free trial</a>
   </div>
 </header>
@@ -615,6 +617,7 @@
         <a href="/how-it-works">How it works</a>
         <a href="/education">Education</a>
         <a href="/reviews">Reviews</a>
+        <a href="/community-profits">Community profits</a>
         <a href="/facts">Fact sheet</a>
         <a href="/cancel">Cancel anytime</a>
       </div>
@@ -762,6 +765,19 @@
       ham.setAttribute('aria-expanded','false'); mm.setAttribute('aria-hidden','true');
     });
   });
+})();
+</script>
+<script>
+/* Carry UTM tags from the landing URL to every Whop checkout link so Whop can attribute checkouts by source. */
+(function(){var K="fpu_utm",keys=["utm_source","utm_medium","utm_campaign","utm_content","utm_term"],p=new URLSearchParams(location.search),u={};
+try{u=JSON.parse(localStorage.getItem(K)||"{}")}catch(e){}
+var got=false;keys.forEach(function(k){if(p.get(k)){if(!got){u={};got=true}u[k]=p.get(k)}});
+if(got){try{localStorage.setItem(K,JSON.stringify(u))}catch(e){}}
+if(!u.utm_source){var r=document.referrer;u={utm_source:r&&r.indexOf(location.hostname)<0?(new URL(r)).hostname.replace(/^www\./,""):"website",utm_medium:r&&r.indexOf(location.hostname)<0?"referral":"direct"}}
+function tag(a){try{var url=new URL(a.href);if(url.hostname.indexOf("whop.com")<0||url.pathname.indexOf("/checkout")<0)return;Object.keys(u).forEach(function(k){if(!url.searchParams.get(k))url.searchParams.set(k,u[k])});if(!url.searchParams.get("utm_content"))url.searchParams.set("utm_content",(location.pathname.replace(/\//g,"")||"home"));a.href=url.toString()}catch(e){}}
+function run(){document.querySelectorAll('a[href*="whop.com/checkout"]').forEach(tag)}
+if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",run);else run();
+document.addEventListener("click",function(e){var a=e.target.closest&&e.target.closest('a[href*="whop.com/checkout"]');if(a){tag(a);try{window.whop&&whop.track("checkout_click",{href:a.href})}catch(x){}}},true);
 })();
 </script>
 </body>

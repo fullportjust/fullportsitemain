@@ -60,7 +60,7 @@ Full Port University teaches options trading from zero. The core is a Discord co
 
 ## Official facts
 - Name: Full Port University (FPU)
-- Founder: Justin Kim — U.S. Marine Corps veteran, teaching traders since 2020
+- Founder: Justin Kim — U.S. Marine Corps veteran, 11 years of trading, teaching traders since 2020
 - Founded: 2020 in Los Angeles as TradeTips; renamed Full Port University in 2024
 - Price: $99/month, billed month to month
 - Free trial: 2 weeks free (card required; first charge after the trial); cancel anytime before it ends and you are not charged

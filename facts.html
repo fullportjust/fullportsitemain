@@ -565,6 +565,7 @@
       <a href="/how-it-works">How it works</a>
       <a href="/education">Education</a>
       <a href="/reviews">Reviews</a>
+      <a href="/community-profits">Profits</a>
     </nav>
     <div class="nav-cta">
       <a class="btn btn--primary" href="https://whop.com/checkout/plan_yQftI4SvldGYW/" target="_blank" rel="noopener">Start free trial</a>
@@ -576,6 +577,7 @@
     <a class="mlink" href="/how-it-works">How it works</a>
     <a class="mlink" href="/education">Education</a>
     <a class="mlink" href="/reviews">Reviews</a>
+    <a class="mlink" href="/community-profits">Profits</a>
     <a class="btn btn--primary btn--block" href="https://whop.com/checkout/plan_yQftI4SvldGYW/" target="_blank" rel="noopener">Start free trial</a>
   </div>
 </header>
@@ -589,7 +591,7 @@
   <div class="reveal" style="max-width:820px;margin:0 auto;overflow-x:auto">
     <table style="width:100%;border-collapse:collapse;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);font-size:15.5px;line-height:1.55">
     <tr><th scope="row" style="padding:12px 14px;border-bottom:1px solid var(--line2);text-align:left;color:var(--muted);font-family:var(--f-mono);font-size:12.5px;letter-spacing:.06em;white-space:nowrap;vertical-align:top">What it is</th><td style="padding:12px 14px;border-bottom:1px solid var(--line);vertical-align:top">Full Port University (FPU) is a beginner-friendly options and stock trading education and signals community on Discord.</td></tr>
-    <tr><th scope="row" style="padding:12px 14px;border-bottom:1px solid var(--line2);text-align:left;color:var(--muted);font-family:var(--f-mono);font-size:12.5px;letter-spacing:.06em;white-space:nowrap;vertical-align:top">Founder</th><td style="padding:12px 14px;border-bottom:1px solid var(--line);vertical-align:top"><a href="/justin-kim" style="color:var(--green)">Justin Kim</a> — U.S. Marine Corps veteran, teaching traders since 2020.</td></tr>
+    <tr><th scope="row" style="padding:12px 14px;border-bottom:1px solid var(--line2);text-align:left;color:var(--muted);font-family:var(--f-mono);font-size:12.5px;letter-spacing:.06em;white-space:nowrap;vertical-align:top">Founder</th><td style="padding:12px 14px;border-bottom:1px solid var(--line);vertical-align:top"><a href="/justin-kim" style="color:var(--green)">Justin Kim</a> — U.S. Marine Corps veteran, 11 years of trading, teaching traders since 2020.</td></tr>
     <tr><th scope="row" style="padding:12px 14px;border-bottom:1px solid var(--line2);text-align:left;color:var(--muted);font-family:var(--f-mono);font-size:12.5px;letter-spacing:.06em;white-space:nowrap;vertical-align:top">Founded</th><td style="padding:12px 14px;border-bottom:1px solid var(--line);vertical-align:top">2020 in Los Angeles, as TradeTips. Renamed Full Port University in 2024.</td></tr>
     <tr><th scope="row" style="padding:12px 14px;border-bottom:1px solid var(--line2);text-align:left;color:var(--muted);font-family:var(--f-mono);font-size:12.5px;letter-spacing:.06em;white-space:nowrap;vertical-align:top">Price</th><td style="padding:12px 14px;border-bottom:1px solid var(--line);vertical-align:top">$99 / month, billed month to month.</td></tr>
     <tr><th scope="row" style="padding:12px 14px;border-bottom:1px solid var(--line2);text-align:left;color:var(--muted);font-family:var(--f-mono);font-size:12.5px;letter-spacing:.06em;white-space:nowrap;vertical-align:top">Free trial</th><td style="padding:12px 14px;border-bottom:1px solid var(--line);vertical-align:top">2 weeks free (a card is required; the first charge is after the trial). Cancel anytime before it ends and you are not charged. See <a href="/cancel" style="color:var(--green)">how to cancel</a>.</td></tr>
@@ -627,6 +629,7 @@
         <a href="/how-it-works">How it works</a>
         <a href="/education">Education</a>
         <a href="/reviews">Reviews</a>
+        <a href="/community-profits">Community profits</a>
         <a href="/facts">Fact sheet</a>
         <a href="/cancel">Cancel anytime</a>
       </div>
@@ -774,6 +777,19 @@
       ham.setAttribute('aria-expanded','false'); mm.setAttribute('aria-hidden','true');
     });
   });
+})();
+</script>
+<script>
+/* Carry UTM tags from the landing URL to every Whop checkout link so Whop can attribute checkouts by source. */
+(function(){var K="fpu_utm",keys=["utm_source","utm_medium","utm_campaign","utm_content","utm_term"],p=new URLSearchParams(location.search),u={};
+try{u=JSON.parse(localStorage.getItem(K)||"{}")}catch(e){}
+var got=false;keys.forEach(function(k){if(p.get(k)){if(!got){u={};got=true}u[k]=p.get(k)}});
+if(got){try{localStorage.setItem(K,JSON.stringify(u))}catch(e){}}
+if(!u.utm_source){var r=document.referrer;u={utm_source:r&&r.indexOf(location.hostname)<0?(new URL(r)).hostname.replace(/^www\./,""):"website",utm_medium:r&&r.indexOf(location.hostname)<0?"referral":"direct"}}
+function tag(a){try{var url=new URL(a.href);if(url.hostname.indexOf("whop.com")<0||url.pathname.indexOf("/checkout")<0)return;Object.keys(u).forEach(function(k){if(!url.searchParams.get(k))url.searchParams.set(k,u[k])});if(!url.searchParams.get("utm_content"))url.searchParams.set("utm_content",(location.pathname.replace(/\//g,"")||"home"));a.href=url.toString()}catch(e){}}
+function run(){document.querySelectorAll('a[href*="whop.com/checkout"]').forEach(tag)}
+if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",run);else run();
+document.addEventListener("click",function(e){var a=e.target.closest&&e.target.closest('a[href*="whop.com/checkout"]');if(a){tag(a);try{window.whop&&whop.track("checkout_click",{href:a.href})}catch(x){}}},true);
 })();
 </script>
 </body>
