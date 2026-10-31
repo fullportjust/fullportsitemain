@@ -8,7 +8,8 @@
     { "source": "/blog/:path*", "destination": "/", "permanent": true },
     { "source": "/category/:path*", "destination": "/", "permanent": true },
     { "source": "/tag/:path*", "destination": "/", "permanent": true },
-    { "source": "/author/:path*", "destination": "/", "permanent": true }
+    { "source": "/author/:path*", "destination": "/", "permanent": true },
+    { "source": "/free", "destination": "/", "permanent": true }
   ],
   "headers": [
     {
