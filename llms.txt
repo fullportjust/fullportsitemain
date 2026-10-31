@@ -7,9 +7,10 @@ Full Port University teaches options trading from zero. The core is a Discord co
 ## Key pages
 - [Home](https://www.fullportuniversity.com/): What access includes, how the free trial works, and real member results.
 - [How It Works](https://www.fullportuniversity.com/how-it-works): One real trade shown start to finish from Discord, then the [BUY] / [TRIM] / [SELL] system decoded.
-- [Education](https://www.fullportuniversity.com/education): The member course — charts, then options, then the core indicators — plus the analysts' indicator setups and the shared watchlist.
+- [Education](https://www.fullportuniversity.com/education): The member course, Your First $10,000 Trading — 9 modules from funding your account to your first $10,000 — plus weekly live teaching and the shared watchlist.
 - [How to Read a Trade Signal](https://www.fullportuniversity.com/how-to-read-a-trade-signal): Beginner guide to [BUY], [TRIM], [SELL], strikes, expirations, DTE and position sizing.
 - [Reviews](https://www.fullportuniversity.com/reviews): Member reviews (rated 4.6 on Whop) and real profit screenshots.
+- [Community Profits](https://www.fullportuniversity.com/community-profits): Real member profit screenshots posted in the Discord #post-profits channel, updated monthly.
 - [Justin Kim](https://www.fullportuniversity.com/justin-kim): Founder of FPU — background and bio.
 - [Full Port University Review](https://www.fullportuniversity.com/full-port-university-review): First-party review — price, what's included, who it's not for, the 4.6 Whop rating.
 - [Fact sheet](https://www.fullportuniversity.com/facts): Official quotable facts — price, trial, members, rating, what's included.
@@ -47,8 +48,8 @@ Full Port University teaches options trading from zero. The core is a Discord co
 - Signal system: [BUY] to open, [TRIM] to take partial profit, [SELL] to close
 - Position sizing: FULL (3-5% of account), SMALL (1-3%), LOTTO (under 1%)
 - Risk framing: by DTE (days to expiration) — 1-7 days most dangerous, 30+ days lowest risk of the four
-- Course structure: three stages — set up and read charts, how options work, then the core indicators (RSI, Bollinger Bands, MACD)
-- Access: the course, the indicator setups and the watchlist are member benefits, unlocked on joining. Nothing on the site is free except the trial.
+- Course structure: Your First $10,000 Trading — 9 modules, from funding your account and trading our setups to locking in profits, scaling, and your first $10,000
+- Access: the course and the shared watchlist are member benefits, unlocked on joining. Nothing on the site is free except the trial.
 - Pricing: 14 days free, cancel anytime before day 14 and you are never charged; $99/month afterwards, billed month to month
 - Reviews: rated 4.6 on Whop (245 reviews) — https://whop.com/fullportuniversity/reviews/
 - Contact: growth@fullportuniversity.com
