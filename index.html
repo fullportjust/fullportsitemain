@@ -389,6 +389,21 @@
   }
 
 
+
+  /* mobile-only hero photo banner */
+  .hero-top{position:relative;isolation:isolate}
+  .hero-bg,.hero-photo-cap{display:none}
+  @media (max-width:560px){
+    body{overflow-x:clip}
+    .hero.wrap{padding:0 18px 24px}
+    .hero-top{padding:200px 0 30px}
+    .hero-bg{display:block;position:absolute;top:0;left:50%;width:100vw;margin-left:-50vw;height:330px;z-index:-1;background:url(teach-chart-breakdown.jpg) 60% 22%/cover no-repeat}
+    .hero-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,14,17,0) 0%,rgba(11,14,17,.1) 45%,rgba(11,14,17,.75) 75%,var(--bg) 100%)}
+    .hero-top h1,.hero-top .sub{text-shadow:0 2px 18px rgba(0,0,0,.6)}
+    .hero-photo-cap{display:inline-flex;align-items:center;gap:8px;margin-top:26px;font-family:var(--f-mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#c5ccd8}
+    .live-dot{width:8px;height:8px;border-radius:50%;background:var(--green);box-shadow:0 0 0 4px rgba(18,226,124,.2)}
+  }
+
   /* multi-page additions */
   .nav-links a.active{color:var(--text)}
   .nav-links a.active::after{content:"";display:block;height:2px;background:var(--green);border-radius:2px;margin-top:5px}
@@ -738,12 +753,16 @@
 <main id="top">
 
 <section class="hero wrap">
+  <div class="hero-top">
+  <div class="hero-bg" aria-hidden="true"></div>
   <span class="eyebrow reveal">Full access from day one</span>
   <h1 class="reveal">Never traded options? <span class="hl">Learn from 5 analysts sharing their own trades live.</span></h1>
   <p class="sub reveal">Watch 5 analysts share their own trades live &mdash; entry, trim, exit, and why &mdash; then learn to make your own calls with the full beginner course.</p>
   <div class="hero-cta reveal">
     <a class="btn btn--primary btn--lg" href="https://whop.com/checkout/plan_yQftI4SvldGYW/" target="_blank" rel="noopener">Start free trial</a>
     <a class="btn btn--ghost btn--lg" href="/how-it-works">See a trade run</a>
+  </div>
+  <p class="hero-photo-cap"><span class="live-dot"></span>Justin teaching a live chart breakdown</p>
   </div>
   <div class="afterclick reveal" style="display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin:24px auto 0;max-width:760px">
     <div style="flex:1;min-width:190px;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:14px 16px;text-align:left">
