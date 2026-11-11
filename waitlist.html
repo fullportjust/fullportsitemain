@@ -93,9 +93,9 @@ p{margin:0}
 .hero h1 .u{background:linear-gradient(transparent 60%,var(--gold-soft) 0);padding:0 3px}
 .freebadge{display:inline-flex;align-items:center;gap:8px;margin-top:16px;font-family:var(--f-mono);font-size:13px;font-weight:700;letter-spacing:.04em;color:var(--green);background:var(--green-soft);border:1px solid rgba(18,226,124,.3);padding:7px 14px;border-radius:999px}
 .hero .lede{color:#C6D0DA;font-size:clamp(16px,1.9vw,19px);margin-top:18px;max-width:40ch}
-.hero-photo{position:relative;border-radius:var(--r-lg);overflow:hidden;border:1px solid var(--line2);box-shadow:0 30px 70px -40px rgba(0,0,0,.9)}
-.hero-photo img{width:100%;aspect-ratio:16/10;object-fit:cover;object-position:center 30%}
-.hero-photo .cap{position:absolute;left:0;right:0;bottom:0;padding:26px 18px 14px;background:linear-gradient(transparent,rgba(8,11,15,.86));font-family:var(--f-mono);font-size:12px;letter-spacing:.03em;color:#e9eef3}
+.hero-photo{max-width:330px;position:relative;border-radius:16px;overflow:hidden;border:1px solid var(--line2);box-shadow:0 20px 50px -28px rgba(0,0,0,.9);margin-bottom:22px}
+.hero-photo img{width:100%;height:auto;display:block}
+.hero-photo .cap{position:absolute;left:0;right:0;bottom:0;padding:22px 14px 10px;background:linear-gradient(transparent,rgba(8,11,15,.88));font-family:var(--f-mono);font-size:11px;letter-spacing:.02em;color:#e9eef3}
 .hero-photo .cap b{color:var(--green);font-weight:700}
 .stats{display:flex;gap:22px;margin-top:22px;flex-wrap:wrap}
 .stat .n{font-family:var(--f-display);font-weight:700;font-size:24px}
@@ -196,7 +196,7 @@ footer{border-top:1px solid var(--line);padding:46px 0 30px;margin-top:18px}
   .hero-grid{grid-template-columns:1fr;gap:22px;grid-template-areas:"pitch" "form" "proof"}
   .hero .lede{max-width:none}
   .hero .card{position:static}
-  .hero-photo img{aspect-ratio:4/3}
+  .hero-photo{max-width:300px}
   .grid4{grid-template-columns:1fr;gap:12px}
   .gallery{grid-template-columns:repeat(2,1fr);grid-auto-rows:132px}
   .gphoto.big{grid-column:span 2;grid-row:span 1;aspect-ratio:auto}
@@ -252,6 +252,10 @@ footer{border-top:1px solid var(--line);padding:46px 0 30px;margin-top:18px}
   <section class="hero">
     <div class="wrap hero-grid">
       <div class="reveal hp-pitch">
+        <figure class="hero-photo">
+          <img src="/img/class-chart.jpg" alt="Justin teaching a live trading class, breaking down a chart on screen" loading="eager" width="900" height="900" />
+          <figcaption class="cap"><b>Teaching live.</b> This is how we do it &mdash; every day.</figcaption>
+        </figure>
         <span class="eyebrow">A free 1-month intensive &middot; Only 100 seats</span>
         <h1>We're taking <span class="g">100 traders</span> and making them profitable <span class="u">by Christmas.</span></h1>
         <span class="freebadge">100% free &middot; No catch</span>
@@ -290,10 +294,6 @@ footer{border-top:1px solid var(--line);padding:46px 0 30px;margin-top:18px}
       </div>
 
       <div class="reveal hp-proof">
-        <figure class="hero-photo">
-          <img src="/img/hero-teaching.jpg" alt="Justin teaching a live trading class with a chart on screen" loading="eager" width="1230" height="1230" />
-          <figcaption class="cap"><b>This is the room.</b> We teach live &mdash; in person and in our community, every day.</figcaption>
-        </figure>
         <div class="stats">
           <div class="stat"><div class="n">10,680</div><div class="l">Members already in</div></div>
           <div class="stat"><div class="n">4.6<span class="star">&#9733;</span></div><div class="l">On Whop &middot; 245 reviews</div></div>
