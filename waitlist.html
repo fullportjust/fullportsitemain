@@ -85,7 +85,7 @@ p{margin:0}
 
 /* hero */
 .hero{padding:40px 0 34px}
-.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:30px 40px;align-items:start;grid-template-areas:"pitch form" "proof form"}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:30px 40px;align-items:start;grid-template-areas:"pitch form"}
 .hp-pitch{grid-area:pitch}.hp-form{grid-area:form}.hp-proof{grid-area:proof}
 .eyebrow{display:inline-flex;align-items:center;gap:9px;font-family:var(--f-mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--green);border:1px solid rgba(18,226,124,.3);background:var(--green-soft);padding:8px 13px;border-radius:999px;margin-bottom:18px}
 .hero h1{font-size:clamp(34px,5.4vw,58px)}
@@ -157,6 +157,26 @@ section.band{padding:52px 0;border-top:1px solid var(--line)}
 .gphoto img{width:100%;height:auto;display:block}
 .gphoto .tag{position:absolute;left:10px;bottom:10px;font-family:var(--f-mono);font-size:11px;font-weight:700;color:#fff;background:rgba(8,11,15,.72);backdrop-filter:blur(4px);padding:5px 9px;border-radius:7px}
 
+/* student wins */
+.win-hero{display:grid;grid-template-columns:280px 1fr;gap:26px;align-items:center;background:linear-gradient(160deg,var(--surface) 0,var(--bg2) 100%);border:1px solid var(--line2);border-radius:var(--r-lg);padding:22px;margin-top:28px}
+.win-hero-media{border-radius:14px;overflow:hidden;border:1px solid var(--line2);background:#000}
+.win-hero-media img{width:100%;height:auto;display:block}
+.win-hero-copy .lbl{font-family:var(--f-mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin-bottom:12px}
+.win-hero-copy .big{font-family:var(--f-display);font-weight:700;font-size:clamp(34px,6vw,52px);line-height:1;color:var(--green)}
+.win-hero-copy .big span{display:block;color:var(--muted);font-family:var(--f-mono);font-size:13px;font-weight:500;letter-spacing:.02em;margin-top:10px}
+.win-hero-copy p{color:#C6D0DA;font-size:17px;margin-top:16px;max-width:40ch}
+.wins-sub{font-family:var(--f-mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin:34px 0 14px}
+.wins-row2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.win-wide{margin-top:16px}
+.wins-masonry{column-count:3;column-gap:16px}
+.win-card{break-inside:avoid;margin:0 0 16px;background:var(--surface);border:1px solid var(--line2);border-radius:14px;overflow:hidden}
+.win-card img{width:100%;height:auto;display:block}
+.win-card .cap{padding:11px 13px;font-family:var(--f-mono);font-size:12.5px;color:var(--text);border-top:1px solid var(--line)}
+.win-card .cap b{color:var(--green);font-weight:700}
+.wins-cta{text-align:center;margin-top:32px}
+.wins-cta a{display:inline-flex;align-items:center;gap:9px;font-family:var(--f-display);font-weight:700;font-size:18px;color:var(--green)}
+.wins-cta a:hover{text-decoration:underline}
+
 /* timeline */
 .timeline{margin-top:30px;display:grid;gap:12px}
 .step{display:grid;grid-template-columns:118px 1fr;gap:18px;align-items:start;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:20px 22px}
@@ -194,12 +214,15 @@ footer{border-top:1px solid var(--line);padding:46px 0 30px;margin-top:18px}
 /* ---------- mobile-first tuning ---------- */
 @media (max-width:860px){
   .hero{padding:26px 0 24px}
-  .hero-grid{grid-template-columns:1fr;gap:22px;grid-template-areas:"pitch" "form" "proof"}
+  .hero-grid{grid-template-columns:1fr;gap:22px;grid-template-areas:"pitch" "form"}
   .hero .lede{max-width:none}
   .hero .card{position:static}
   .hero-photo{max-width:300px}
   .grid4{grid-template-columns:1fr;gap:12px}
   .gallery-masonry{column-count:2}
+  .win-hero{grid-template-columns:1fr;gap:18px}
+  .win-hero-media{max-width:340px}
+  .wins-masonry{column-count:2}
   .foot-top{grid-template-columns:1fr;gap:24px}
   .step{grid-template-columns:1fr;gap:5px}
   .step .when{padding-top:0}
@@ -213,6 +236,8 @@ footer{border-top:1px solid var(--line);padding:46px 0 30px;margin-top:18px}
   .card{padding:20px}
   .stat{min-width:44%}
   .gallery-masonry{column-count:1}
+  .wins-row2{grid-template-columns:1fr}
+  .wins-masonry{column-count:1}
   .count .box .v{font-size:23px}
 }
 </style>
@@ -259,7 +284,7 @@ footer{border-top:1px solid var(--line);padding:46px 0 30px;margin-top:18px}
         <span class="eyebrow">A free 1-month intensive &middot; Only 100 seats</span>
         <h1>We're taking <span class="g">100 traders</span> and making them profitable <span class="u">by Christmas.</span></h1>
         <span class="freebadge">100% free &middot; No catch</span>
-        <p class="lede">Even if you've never placed a single trade. For one month you join our community, we teach you and trade with you live every day, you ask us anything &mdash; and we hand you every tool you need. It all starts with one live webinar.</p>
+        <p class="lede">Even if you've never placed a single trade. For one month you're in the room with us &mdash; me and Kenny &mdash; every day: we teach you, we trade live together, you ask us anything, and we hand you every tool you need. It's a small group, and it starts with one live webinar.</p>
       </div>
 
       <!-- FORM CARD -->
@@ -293,13 +318,6 @@ footer{border-top:1px solid var(--line);padding:46px 0 30px;margin-top:18px}
         </div>
       </div>
 
-      <div class="reveal hp-proof">
-        <div class="stats">
-          <div class="stat"><div class="n">10,680</div><div class="l">Members already in</div></div>
-          <div class="stat"><div class="n">4.6<span class="star">&#9733;</span></div><div class="l">On Whop &middot; 245 reviews</div></div>
-          <div class="stat"><div class="n">5</div><div class="l">Analysts teaching live</div></div>
-        </div>
-      </div>
     </div>
   </section>
 
@@ -318,8 +336,8 @@ footer{border-top:1px solid var(--line);padding:46px 0 30px;margin-top:18px}
         </div>
         <div class="feat reveal">
           <div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
-          <h3>Daily mentorship in our community</h3>
-          <p>You're in the room with us every day. Talk to us, ask questions, get real answers &mdash; and never trade alone.</p>
+          <h3>In the room with us, daily</h3>
+          <p>You're in our group every day with me and Kenny. Talk to us, ask anything, get real answers &mdash; and never trade alone.</p>
         </div>
         <div class="feat reveal">
           <div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg></div>
@@ -342,7 +360,7 @@ footer{border-top:1px solid var(--line);padding:46px 0 30px;margin-top:18px}
       <div class="reveal">
         <div class="kicker">This is real</div>
         <h2>In the classroom. On the trading floor. In the markets.</h2>
-        <p class="intro">We've taught beginners in person for years &mdash; and we trade real money, live, every day. This is who you'll be learning from.</p>
+        <p class="intro">We've taught beginners in person for years &mdash; and we trade real money, live, every day. It's me and Kenny you'll be in the room with.</p>
       </div>
       <figure class="gallery-feature reveal">
         <img src="/img/call-grid.jpg" alt="Live mentorship training call in the Full Port University community with Justin and Kenny on camera" loading="lazy" />
@@ -357,13 +375,54 @@ footer{border-top:1px solid var(--line);padding:46px 0 30px;margin-top:18px}
     </div>
   </section>
 
+  <!-- STUDENT WINS -->
+  <section class="band">
+    <div class="wrap">
+      <div class="reveal wins-head">
+        <div class="kicker">Student wins</div>
+        <h2>Real members. Real payouts.</h2>
+        <p class="intro">A few months ago, most of them had never placed a trade.</p>
+      </div>
+
+      <div class="win-hero reveal">
+        <div class="win-hero-media">
+          <img src="/img/win-myk-payout.jpg" alt="Myk's UFunded payout screen showing a $20,045 first payout on a $380,000 funded account" loading="lazy" width="471" height="1024" />
+        </div>
+        <div class="win-hero-copy">
+          <div class="lbl">His first payout</div>
+          <div class="big">$20,045<span>Myk's first payout &middot; $380K funded account</span></div>
+          <p>He didn't believe it would work. Now he's getting his first $20,000 payout.</p>
+        </div>
+      </div>
+
+      <div class="wins-sub">Funded accounts</div>
+      <div class="wins-row2">
+        <figure class="win-card reveal"><img src="/img/win-funded-nq1.jpg" alt="Funded account post: NQ trade up $4,301 and $3,126" loading="lazy" width="620" height="605" /><figcaption class="cap"><b>+$4,301</b> &amp; +$3,126 &middot; funded NQ</figcaption></figure>
+        <figure class="win-card reveal"><img src="/img/win-funded-nq2.jpg" alt="Funded account post: NQ trade up $1,049 and $207" loading="lazy" width="620" height="576" /><figcaption class="cap"><b>+$1,049</b> &amp; +$207 &middot; funded NQ</figcaption></figure>
+      </div>
+      <figure class="win-card win-wide reveal"><img src="/img/win-funded-cedilig.jpg" alt="Funded account post in post-profits: closed P&amp;L of $1,170" loading="lazy" width="900" height="180" /><figcaption class="cap"><b>+$1,170</b> &middot; funded account</figcaption></figure>
+      <figure class="win-card win-wide reveal"><img src="/img/win-funded-kenny.jpg" alt="Kenny's funded update in kenny-signals, live and up $4,200" loading="lazy" width="1000" height="553" /><figcaption class="cap">Kenny &middot; <b>funded &amp; live</b> &middot; +$4,200 open</figcaption></figure>
+
+      <div class="wins-sub">Member wins, posted in our group</div>
+      <div class="wins-masonry">
+        <figure class="win-card reveal"><img src="/img/win-christian-xle.jpg" alt="Member post in post-profits: $40,067 profit on XLE puts" loading="lazy" width="760" height="616" /><figcaption class="cap"><b>+$40,067</b> &middot; XLE puts</figcaption></figure>
+        <figure class="win-card reveal"><img src="/img/win-christian-mu.jpg" alt="Member post in post-profits: $10,354 profit on MU 0DTE" loading="lazy" width="760" height="366" /><figcaption class="cap"><b>+$10,354</b> &middot; MU 0DTE</figcaption></figure>
+        <figure class="win-card reveal"><img src="/img/win-net-18452.jpg" alt="A student's total net profit and loss of $18,452" loading="lazy" width="620" height="389" /><figcaption class="cap"><b>$18,452</b> net P&amp;L &middot; one of our students</figcaption></figure>
+        <figure class="win-card reveal"><img src="/img/win-devin.jpg" alt="Member post in post-profits: $3,032 on IGV puts" loading="lazy" width="900" height="203" /><figcaption class="cap"><b>+$3,032</b> &middot; IGV puts</figcaption></figure>
+        <figure class="win-card reveal"><img src="/img/win-sikjr.jpg" alt="Member post in post-profits: $2,664 cumulative P&amp;L on LITX" loading="lazy" width="900" height="254" /><figcaption class="cap"><b>+$2,664</b> &middot; LITX</figcaption></figure>
+      </div>
+
+      <div class="wins-cta reveal"><a href="#signup">Your win could be next. Claim your spot &rarr;</a></div>
+    </div>
+  </section>
+
   <!-- MISSION / WHY FREE -->
   <section class="band">
     <div class="wrap">
       <div class="mission reveal">
         <div class="kicker">Why we're doing this for free</div>
         <h2>100 beginners. One month. Profitable by Christmas.</h2>
-        <p>Most people never learn to trade because they get handed a course and left alone. We're doing the opposite. We're taking <b>100 people &mdash; even total beginners</b> &mdash; into our community and pouring a month of daily teaching, live trading and mentorship into them, with one goal: <span class="free">make you a profitable trader in time for Christmas.</span></p>
+        <p>Most people never learn to trade because they get handed a course and left alone. We're doing the opposite. We're taking <b>100 people &mdash; even total beginners</b> &mdash; into our group, where you're in the room with me and Kenny every day: a month of daily teaching and live trading, with one goal: <span class="free">make you a profitable trader in time for Christmas.</span></p>
         <p style="margin-top:14px">We're not charging a cent. No catch, no upsell. We'd rather prove it works. There are only 100 seats, and they open on the webinar &mdash; the waitlist decides who's first in line.</p>
       </div>
     </div>
