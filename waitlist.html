@@ -93,7 +93,7 @@ p{margin:0}
 .hero h1 .u{background:linear-gradient(transparent 60%,var(--gold-soft) 0);padding:0 3px}
 .freebadge{display:inline-flex;align-items:center;gap:8px;margin-top:16px;font-family:var(--f-mono);font-size:13px;font-weight:700;letter-spacing:.04em;color:var(--green);background:var(--green-soft);border:1px solid rgba(18,226,124,.3);padding:7px 14px;border-radius:999px}
 .hero .lede{color:#C6D0DA;font-size:clamp(16px,1.9vw,19px);margin-top:18px;max-width:40ch}
-.hero-photo{max-width:330px;position:relative;border-radius:16px;overflow:hidden;border:1px solid var(--line2);box-shadow:0 20px 50px -28px rgba(0,0,0,.9);margin-bottom:22px}
+.hero-photo{max-width:280px;position:relative;border-radius:16px;overflow:hidden;border:1px solid var(--line2);box-shadow:0 20px 50px -28px rgba(0,0,0,.9);margin-bottom:22px}
 .hero-photo img{width:100%;height:auto;display:block}
 .hero-photo .cap{position:absolute;left:0;right:0;bottom:0;padding:22px 14px 10px;background:linear-gradient(transparent,rgba(8,11,15,.88));font-family:var(--f-mono);font-size:11px;letter-spacing:.02em;color:#e9eef3}
 .hero-photo .cap b{color:var(--green);font-weight:700}
@@ -149,12 +149,13 @@ section.band{padding:52px 0;border-top:1px solid var(--line)}
 .t-sell{color:#C9A6FF;background:rgba(201,166,255,.12)}
 
 /* gallery */
-.gallery{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:150px;gap:12px;margin-top:30px}
-.gphoto{position:relative;border-radius:var(--r);overflow:hidden;border:1px solid var(--line2)}
-.gphoto img{width:100%;height:100%;object-fit:cover}
-.gphoto .tag{position:absolute;left:10px;bottom:10px;font-family:var(--f-mono);font-size:11px;font-weight:700;color:#fff;background:rgba(8,11,15,.7);backdrop-filter:blur(4px);padding:5px 9px;border-radius:7px}
-.gphoto.big{grid-column:span 2;grid-row:span 2}
-.gphoto.tall{grid-row:span 2}
+.gallery-feature{position:relative;border-radius:var(--r);overflow:hidden;border:1px solid var(--line2);margin-top:28px}
+.gallery-feature img{width:100%;height:auto;display:block}
+.gallery-feature .tag{position:absolute;left:14px;bottom:14px;font-family:var(--f-mono);font-size:12px;font-weight:700;color:#fff;background:rgba(8,11,15,.74);backdrop-filter:blur(4px);padding:6px 11px;border-radius:8px}
+.gallery-masonry{column-count:3;column-gap:14px;margin-top:14px}
+.gphoto{break-inside:avoid;margin:0 0 14px;position:relative;border-radius:14px;overflow:hidden;border:1px solid var(--line2)}
+.gphoto img{width:100%;height:auto;display:block}
+.gphoto .tag{position:absolute;left:10px;bottom:10px;font-family:var(--f-mono);font-size:11px;font-weight:700;color:#fff;background:rgba(8,11,15,.72);backdrop-filter:blur(4px);padding:5px 9px;border-radius:7px}
 
 /* timeline */
 .timeline{margin-top:30px;display:grid;gap:12px}
@@ -198,8 +199,7 @@ footer{border-top:1px solid var(--line);padding:46px 0 30px;margin-top:18px}
   .hero .card{position:static}
   .hero-photo{max-width:300px}
   .grid4{grid-template-columns:1fr;gap:12px}
-  .gallery{grid-template-columns:repeat(2,1fr);grid-auto-rows:132px}
-  .gphoto.big{grid-column:span 2;grid-row:span 1;aspect-ratio:auto}
+  .gallery-masonry{column-count:2}
   .foot-top{grid-template-columns:1fr;gap:24px}
   .step{grid-template-columns:1fr;gap:5px}
   .step .when{padding-top:0}
@@ -212,7 +212,7 @@ footer{border-top:1px solid var(--line);padding:46px 0 30px;margin-top:18px}
   .hero h1{font-size:30px}
   .card{padding:20px}
   .stat{min-width:44%}
-  .gallery{grid-auto-rows:120px}
+  .gallery-masonry{column-count:1}
   .count .box .v{font-size:23px}
 }
 </style>
@@ -253,8 +253,8 @@ footer{border-top:1px solid var(--line);padding:46px 0 30px;margin-top:18px}
     <div class="wrap hero-grid">
       <div class="reveal hp-pitch">
         <figure class="hero-photo">
-          <img src="/img/class-chart.jpg" alt="Justin teaching a live trading class, breaking down a chart on screen" loading="eager" width="900" height="900" />
-          <figcaption class="cap"><b>Teaching live.</b> This is how we do it &mdash; every day.</figcaption>
+          <img src="/img/hero-dubai.jpg" alt="Justin at the Full Port University trading desk in Dubai with charts on the screens" loading="eager" width="547" height="820" />
+          <figcaption class="cap"><b>Live on the screens.</b> This is where we trade &mdash; every day.</figcaption>
         </figure>
         <span class="eyebrow">A free 1-month intensive &middot; Only 100 seats</span>
         <h1>We're taking <span class="g">100 traders</span> and making them profitable <span class="u">by Christmas.</span></h1>
@@ -344,12 +344,15 @@ footer{border-top:1px solid var(--line);padding:46px 0 30px;margin-top:18px}
         <h2>In the classroom. On the trading floor. In the markets.</h2>
         <p class="intro">We've taught beginners in person for years &mdash; and we trade real money, live, every day. This is who you'll be learning from.</p>
       </div>
-      <div class="gallery">
-        <div class="gphoto big reveal"><img src="/img/dubai-setup.jpg" alt="Full Port University live trading setup in Dubai with charts and P&amp;L" loading="lazy" /><span class="tag">Trading live &middot; Dubai</span></div>
-        <div class="gphoto reveal"><img src="/img/class-chart.jpg" alt="Justin teaching a live class breaking down a chart" loading="lazy" /><span class="tag">Teaching a class</span></div>
-        <div class="gphoto reveal"><img src="/img/dubai-team.jpg" alt="Justin and Kenny at the Dubai trading office" loading="lazy" /><span class="tag">The team</span></div>
-        <div class="gphoto tall reveal"><img src="/img/dubai-floor.jpg" alt="Full Port University trading floor in Dubai overlooking the skyline" loading="lazy" /><span class="tag">Our trading floor</span></div>
-        <div class="gphoto reveal"><img src="/img/class-room.jpg" alt="Justin teaching risk management to a live classroom" loading="lazy" /><span class="tag">Live, in person</span></div>
+      <figure class="gallery-feature reveal">
+        <img src="/img/call-grid.jpg" alt="Live mentorship training call in the Full Port University community with Justin and Kenny on camera" loading="lazy" />
+        <span class="tag">Daily live mentorship &middot; in our community</span>
+      </figure>
+      <div class="gallery-masonry">
+        <figure class="gphoto reveal"><img src="/img/dubai-office.jpg" alt="Justin at the Full Port University trading desk in Dubai" loading="lazy" /><span class="tag">Trading from Dubai</span></figure>
+        <figure class="gphoto reveal"><img src="/img/dubai-setup.jpg" alt="Full Port University live trading screens and P&amp;L" loading="lazy" /><span class="tag">Live on the screens</span></figure>
+        <figure class="gphoto reveal"><img src="/img/dubai-team.jpg" alt="Justin and Kenny at the Dubai trading office" loading="lazy" /><span class="tag">The team &middot; Justin &amp; Kenny</span></figure>
+        <figure class="gphoto reveal"><img src="/img/class-chart.jpg" alt="Justin teaching a live class breaking down a chart" loading="lazy" /><span class="tag">Teaching a class</span></figure>
       </div>
     </div>
   </section>
