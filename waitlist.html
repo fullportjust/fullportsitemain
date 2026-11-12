@@ -115,6 +115,9 @@ p{margin:0}
 .field label{display:block;font-family:var(--f-mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
 .field input{width:100%;background:var(--bg);border:1px solid var(--line2);border-radius:12px;color:var(--text);font-family:var(--f-body);font-size:16px;padding:14px 15px;transition:border .15s,box-shadow .15s}
 .field input:focus{outline:none;border-color:var(--green);box-shadow:0 0 0 3px var(--green-soft)}
+.field .opt{text-transform:none;letter-spacing:0;opacity:.75}
+.consent{display:flex;gap:10px;align-items:flex-start;margin:2px 0 14px;font-size:12px;line-height:1.45;color:var(--muted);cursor:pointer;text-align:left}
+.consent input{width:18px;height:18px;flex:0 0 18px;margin-top:1px;accent-color:var(--green)}
 .form-note{font-family:var(--f-mono);font-size:11px;color:var(--muted2);text-align:center;margin-top:11px;line-height:1.5}
 .form-msg{display:none;font-size:14px;margin-top:11px;padding:12px 14px;border-radius:12px;background:rgba(255,92,108,.1);border:1px solid rgba(255,92,108,.35);color:#ffb3ba}
 .success{display:none;text-align:center;padding:8px 0}
@@ -303,6 +306,8 @@ footer{border-top:1px solid var(--line);padding:46px 0 30px;margin-top:18px}
             <form id="waitForm" novalidate>
               <div class="field"><label for="fname">First name</label><input id="fname" name="fullname" type="text" autocomplete="given-name" placeholder="Your first name" required /></div>
               <div class="field"><label for="email">Email</label><input id="email" name="email" type="email" inputmode="email" autocomplete="email" placeholder="you@email.com" required /></div>
+              <div class="field"><label for="phone">Phone <span class="opt">(optional, for text reminders)</span></label><input id="phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="+1 555 123 4567" /></div>
+              <label class="consent" for="sms"><input id="sms" name="sms_consent" type="checkbox" value="on" /><span>Text me webinar reminders and updates from Full Port University. Consent is not a condition of purchase. Msg &amp; data rates may apply. Msg frequency varies. Reply STOP to opt out.</span></label>
               <button class="btn btn--primary btn--lg" type="submit" id="submitBtn">Claim my spot &rarr;</button>
               <div class="form-msg" id="formErr"></div>
               <p class="form-note">Free to join &middot; No spam &middot; Unsubscribe anytime</p>
@@ -452,6 +457,8 @@ footer{border-top:1px solid var(--line);padding:46px 0 30px;margin-top:18px}
           <form id="waitForm2" novalidate>
             <div class="field"><label for="fname2">First name</label><input id="fname2" name="fullname" type="text" autocomplete="given-name" placeholder="Your first name" required /></div>
             <div class="field"><label for="email2">Email</label><input id="email2" name="email" type="email" inputmode="email" autocomplete="email" placeholder="you@email.com" required /></div>
+              <div class="field"><label for="phone2">Phone <span class="opt">(optional, for text reminders)</span></label><input id="phone2" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="+1 555 123 4567" /></div>
+              <label class="consent" for="sms2"><input id="sms2" name="sms_consent" type="checkbox" value="on" /><span>Text me webinar reminders and updates from Full Port University. Consent is not a condition of purchase. Msg &amp; data rates may apply. Msg frequency varies. Reply STOP to opt out.</span></label>
             <button class="btn btn--primary btn--lg" type="submit">Claim my spot &rarr;</button>
             <div class="form-msg" id="formErr2"></div>
             <p class="form-note">Free to join &middot; No spam &middot; Unsubscribe anytime</p>
@@ -519,8 +526,9 @@ footer{border-top:1px solid var(--line);padding:46px 0 30px;margin-top:18px}
     tick(); setInterval(tick,1000);
   })();
   // ActiveCampaign wiring filled once the AC form is created:
-  var AC_ACTION = "";
-  var AC_FIELDS = {};
+  var AC_ACTION = "https://fullportuni.activehosted.com/proc.php";
+  var AC_FIELDS = {u:"1",f:"1",s:"",c:"0",m:"0",act:"sub",v:"2",or:"ca32ddff-d127-411f-93a8-c555c847705c"};
+  function toE164(v){ v=(v||"").trim(); if(!v) return ""; var d=v.replace(/[^0-9]/g,""); if(v.charAt(0)==="+") return "+"+d; if(d.length===10) return "+1"+d; if(d.length===11&&d.charAt(0)==="1") return "+"+d; return "+"+d; }
   function isEmail(v){ return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v); }
   function wireForm(formId, errId, formViewId, successViewId){
     var form = document.getElementById(formId); if(!form) return;
@@ -531,6 +539,10 @@ footer{border-top:1px solid var(--line);padding:46px 0 30px;margin-top:18px}
       var email=(form.querySelector('[name=email]').value||'').trim();
       if(!name){ err.textContent='Please enter your first name.'; err.style.display='block'; return; }
       if(!isEmail(email)){ err.textContent='Please enter a valid email address.'; err.style.display='block'; return; }
+      var phoneEl=form.querySelector('[name=phone]'), smsEl=form.querySelector('[name=sms_consent]');
+      var phone=toE164(phoneEl?phoneEl.value:''); var sms=!!(smsEl&&smsEl.checked);
+      if(phone && phone.replace(/[^0-9]/g,'').length<8){ err.textContent='Please enter a valid phone number, or leave it blank.'; err.style.display='block'; return; }
+      if(sms && !phone){ err.textContent='Add your phone number to get text reminders.'; err.style.display='block'; return; }
       var btn=form.querySelector('button[type=submit]'); btn.disabled=true; btn.textContent='Saving your spot…';
       function onDone(){
         try{ if(window.fbq) fbq('track','Lead'); }catch(e){}
@@ -542,7 +554,10 @@ footer{border-top:1px solid var(--line);padding:46px 0 30px;margin-top:18px}
       if(!AC_ACTION){ console.log('[waitlist] pending AC wiring:', {name:name, email:email}); onDone(); return; }
       var body=new URLSearchParams();
       Object.keys(AC_FIELDS).forEach(function(k){ body.append(k, AC_FIELDS[k]); });
-      body.append('fullname', name); body.append('email', email); body.append('jsonp','true');
+      body.append('fullname', name); body.append('email', email);
+      if(phone) body.append('phone', phone);
+      if(sms) body.append('sms_consent','on');
+      body.append('jsonp','true');
       fetch(AC_ACTION,{method:'POST',mode:'no-cors',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:body.toString()})
         .then(function(){ onDone(); }).catch(function(){ onDone(); });
     });
