@@ -168,6 +168,11 @@ section.band{padding:52px 0;border-top:1px solid var(--line)}
 .wins-sub{font-family:var(--f-mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin:34px 0 14px}
 .wins-row2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
 .win-wide{margin-top:16px}
+.win-feature{background:var(--surface);border:1px solid var(--line2);border-radius:var(--r-lg);overflow:hidden;margin-top:28px}
+.win-feature img{width:100%;height:auto;display:block}
+.win-feature .cap{padding:16px 18px;font-size:15.5px;color:#C6D0DA;line-height:1.5}
+.win-feature .cap .q{display:block;font-family:var(--f-display);font-weight:600;color:var(--text);font-size:19px;margin-bottom:6px}
+.win-feature .cap b{color:var(--green);font-weight:700}
 .wins-masonry{column-count:3;column-gap:16px}
 .win-card{break-inside:avoid;margin:0 0 16px;background:var(--surface);border:1px solid var(--line2);border-radius:14px;overflow:hidden}
 .win-card img{width:100%;height:auto;display:block}
@@ -380,31 +385,18 @@ footer{border-top:1px solid var(--line);padding:46px 0 30px;margin-top:18px}
     <div class="wrap">
       <div class="reveal wins-head">
         <div class="kicker">Student wins</div>
-        <h2>Real members. Real payouts.</h2>
+        <h2>Real members. Real wins.</h2>
         <p class="intro">A few months ago, most of them had never placed a trade.</p>
       </div>
 
-      <div class="win-hero reveal">
-        <div class="win-hero-media">
-          <img src="/img/win-myk-payout.jpg" alt="Myk's UFunded payout screen showing a $20,045 first payout on a $380,000 funded account" loading="lazy" width="471" height="1024" />
-        </div>
-        <div class="win-hero-copy">
-          <div class="lbl">His first payout</div>
-          <div class="big">$20,045<span>Myk's first payout &middot; $380K funded account</span></div>
-          <p>He didn't believe it would work. Now he's getting his first $20,000 payout.</p>
-        </div>
-      </div>
+      <figure class="win-feature reveal">
+        <img src="/img/win-myk-chat.jpg" alt="Myk's post in our chat: TQQQ closed for +$1,129, 'changing my life this month'" loading="lazy" width="1000" height="297" />
+        <figcaption class="cap"><span class="q">&ldquo;Changing my life this month.&rdquo;</span>Myk &mdash; <b>+$1,129</b> on TQQQ, posted right in our chat. A few months ago he'd never placed a trade.</figcaption>
+      </figure>
 
-      <div class="wins-sub">Funded accounts</div>
-      <div class="wins-row2">
-        <figure class="win-card reveal"><img src="/img/win-funded-nq1.jpg" alt="Funded account post: NQ trade up $4,301 and $3,126" loading="lazy" width="620" height="605" /><figcaption class="cap"><b>+$4,301</b> &amp; +$3,126 &middot; funded NQ</figcaption></figure>
-        <figure class="win-card reveal"><img src="/img/win-funded-nq2.jpg" alt="Funded account post: NQ trade up $1,049 and $207" loading="lazy" width="620" height="576" /><figcaption class="cap"><b>+$1,049</b> &amp; +$207 &middot; funded NQ</figcaption></figure>
-      </div>
-      <figure class="win-card win-wide reveal"><img src="/img/win-funded-cedilig.jpg" alt="Funded account post in post-profits: closed P&amp;L of $1,170" loading="lazy" width="900" height="180" /><figcaption class="cap"><b>+$1,170</b> &middot; funded account</figcaption></figure>
-      <figure class="win-card win-wide reveal"><img src="/img/win-funded-kenny.jpg" alt="Kenny's funded update in kenny-signals, live and up $4,200" loading="lazy" width="1000" height="553" /><figcaption class="cap">Kenny &middot; <b>funded &amp; live</b> &middot; +$4,200 open</figcaption></figure>
-
-      <div class="wins-sub">Member wins, posted in our group</div>
+      <div class="wins-sub">More wins, posted in our group</div>
       <div class="wins-masonry">
+        <figure class="win-card reveal"><img src="/img/win-myk-1928.jpg" alt="Myk's post in our chat: TQQQ, QQQ and IWM closed for +$1,928" loading="lazy" width="760" height="281" /><figcaption class="cap">Myk &middot; <b>+$1,928</b> &middot; TQQQ/QQQ/IWM</figcaption></figure>
         <figure class="win-card reveal"><img src="/img/win-christian-xle.jpg" alt="Member post in post-profits: $40,067 profit on XLE puts" loading="lazy" width="760" height="616" /><figcaption class="cap"><b>+$40,067</b> &middot; XLE puts</figcaption></figure>
         <figure class="win-card reveal"><img src="/img/win-christian-mu.jpg" alt="Member post in post-profits: $10,354 profit on MU 0DTE" loading="lazy" width="760" height="366" /><figcaption class="cap"><b>+$10,354</b> &middot; MU 0DTE</figcaption></figure>
         <figure class="win-card reveal"><img src="/img/win-net-18452.jpg" alt="A student's total net profit and loss of $18,452" loading="lazy" width="620" height="389" /><figcaption class="cap"><b>$18,452</b> net P&amp;L &middot; one of our students</figcaption></figure>
