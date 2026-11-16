@@ -525,8 +525,19 @@ footer{border-top:1px solid var(--line);padding:46px 0 30px;margin-top:18px}
   // ActiveCampaign (fullportuni) — post the contact to the list before redirect
   var AC_ACTION = "https://fullportuni.activehosted.com/proc.php";
   var AC_FIELDS = { u:"1", f:"1", s:"", c:"0", m:"0", act:"sub", v:"2", or:"14b441cd-5f63-4136-a84a-116983287046" };
-  // carry campaign tracking from the URL into the submit, if present
-  var AC_UTM = (function(){ var o={}, q=new URLSearchParams(location.search); ["utm_source","utm_medium","utm_campaign"].forEach(function(k){ var val=q.get(k); if(val) o[k]=val; }); return o; })();
+  // Capture UTM params on page load; persist in sessionStorage so they survive navigation.
+  var AC_UTM = (function(){
+    var keys=["utm_source","utm_medium","utm_campaign","utm_content"];
+    var q=new URLSearchParams(location.search); var o={};
+    keys.forEach(function(k){
+      var v=q.get(k);
+      if(v===null||v===""){ try{ v=sessionStorage.getItem('fpu_'+k); }catch(e){} }
+      v=v||"";
+      o[k]=v;
+      try{ if(v) sessionStorage.setItem('fpu_'+k, v); }catch(e){}
+    });
+    return o;
+  })();
   function isEmail(v){ return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v); }
   function wireForm(formId, errId, formViewId, successViewId){
     var form = document.getElementById(formId); if(!form) return;
@@ -550,7 +561,7 @@ footer{border-top:1px solid var(--line);padding:46px 0 30px;margin-top:18px}
       if(!AC_ACTION){ console.log('[waitlist] pending AC wiring:', {name:name, email:email}); onDone(); return; }
       var body=new URLSearchParams();
       Object.keys(AC_FIELDS).forEach(function(k){ body.append(k, AC_FIELDS[k]); });
-      Object.keys(AC_UTM).forEach(function(k){ body.append(k, AC_UTM[k]); });
+      body.append('field[2]', AC_UTM.utm_source||''); body.append('field[3]', AC_UTM.utm_medium||''); body.append('field[4]', AC_UTM.utm_campaign||''); body.append('field[5]', AC_UTM.utm_content||'');
       body.append('fullname', name); body.append('email', email);
       if(smsOptin && phone){ body.append('phone', phone); }
       fetch(AC_ACTION,{method:'POST',mode:'no-cors',keepalive:true,headers:{'Content-Type':'application/x-www-form-urlencoded'},body:body.toString()})
