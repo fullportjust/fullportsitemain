@@ -96,6 +96,7 @@ footer{border-top:1px solid var(--line);padding:26px 0;color:var(--muted2);font-
       <div class="eyebrow">Waitlist confirmed</div>
       <h1>You're <span class="g">on the list.</span></h1>
       <p class="lede">You're in line for one of the 100 seats in the 2026 Full Port Trading Mastermind &mdash; First Edition. Here's exactly what happens next.</p>
+      <p class="sms-note" id="smsNote" style="display:none;margin:12px 0 0;font-size:14px;font-weight:600;color:var(--gold)">You'll also get a text reminder before we go live.</p>
 
       <div class="welcome" style="margin:6px 0 20px;border-radius:16px;overflow:hidden;border:1px solid var(--line2);aspect-ratio:16/9;background:#000">
         <iframe src="https://www.youtube.com/embed/nZZctn_FPpo" title="Welcome from Full Port University" loading="lazy" style="width:100%;height:100%;border:0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
@@ -142,6 +143,8 @@ footer{border-top:1px solid var(--line);padding:26px 0;color:var(--muted2);font-
 
 <script>
   document.getElementById('yr').textContent = new Date().getFullYear();
+  // show the SMS reminder note only if they opted into texts on the waitlist form
+  try{ if(new URLSearchParams(location.search).get('sms')==='1'){ var _n=document.getElementById('smsNote'); if(_n) _n.style.display='block'; } }catch(e){}
   // Live datetime: Sun Nov 29 2026, 3:00-4:30pm PT (23:00-00:30 UTC) - YouTube Live
   var start = '20261129T230000Z', end = '20261130T003000Z';
   var title = '2026 Full Port Trading Mastermind - First Edition (YouTube Live)';
