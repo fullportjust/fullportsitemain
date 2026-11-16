@@ -123,7 +123,6 @@ footer{border-top:1px solid var(--line);padding:26px 0;color:var(--muted2);font-
 
         <div class="btns">
           <a class="btn btn--primary" id="gcal" target="_blank" rel="noopener">Add to Google Calendar</a>
-          <button class="btn btn--ghost" id="ics" type="button">Download .ics</button>
         </div>
       </div>
 
@@ -156,15 +155,6 @@ footer{border-top:1px solid var(--line);padding:26px 0;color:var(--muted2);font-
     + '&dates=' + start + '/' + end
     + '&details=' + encodeURIComponent(details)
     + '&location=' + encodeURIComponent(loc);
-  document.getElementById('ics').addEventListener('click', function(){
-    var ics = ['BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//Full Port University//Waitlist//EN','BEGIN:VEVENT',
-      'UID:fpu-mastermind-20261129@fullportuniversity.com','DTSTAMP:'+start,'DTSTART:'+start,'DTEND:'+end,
-      'SUMMARY:'+title,'DESCRIPTION:'+details,'LOCATION:'+loc,'END:VEVENT','END:VCALENDAR'].join('\r\n');
-    var blob = new Blob([ics], {type:'text/calendar'});
-    var a = document.createElement('a');
-    a.href = URL.createObjectURL(blob); a.download = 'fpu-mastermind-nov29.ics';
-    document.body.appendChild(a); a.click(); document.body.removeChild(a);
-  });
 </script>
 </body>
 </html>
