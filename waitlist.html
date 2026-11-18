@@ -303,7 +303,7 @@ footer{border-top:1px solid var(--line);padding:46px 0 30px;margin-top:18px}
             <form id="waitForm" novalidate>
               <div class="field"><label for="fname">First name</label><input id="fname" name="fullname" type="text" autocomplete="given-name" placeholder="Your first name" required /></div>
               <div class="field"><label for="email">Email</label><input id="email" name="email" type="email" inputmode="email" autocomplete="email" placeholder="you@email.com" required /></div>
-              <div class="field"><label for="phone">Mobile number <span style="font-weight:400;color:var(--muted2)">(optional &mdash; for a text reminder)</span></label><input id="phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="(555) 555-5555" /></div>
+              <div class="field"><label for="phone">Mobile number <span style="font-weight:400;color:var(--muted2)">(US — for a text reminder)</span></label><input id="phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="(555) 555-5555" required /></div>
               <label class="sms-consent" style="display:flex;gap:9px;align-items:flex-start;font-size:12px;line-height:1.5;color:var(--muted);margin:0 0 4px;cursor:pointer"><input type="checkbox" name="sms_optin" value="1" style="margin-top:3px;flex:none" /> <span>Text me reminders about the live event from FPU Text Alerts. Msg &amp; data rates may apply. Up to 4 msgs/month. Reply STOP to opt out, HELP for help. See <a href="/sms-terms" target="_blank" rel="noopener" style="color:var(--gold)">SMS Terms</a> and <a href="/privacy" target="_blank" rel="noopener" style="color:var(--gold)">Privacy Policy</a>.</span></label>
               <button class="btn btn--primary btn--lg" type="submit" id="submitBtn">Claim my spot &rarr;</button>
               <div class="form-msg" id="formErr"></div>
@@ -454,7 +454,7 @@ footer{border-top:1px solid var(--line);padding:46px 0 30px;margin-top:18px}
           <form id="waitForm2" novalidate>
             <div class="field"><label for="fname2">First name</label><input id="fname2" name="fullname" type="text" autocomplete="given-name" placeholder="Your first name" required /></div>
             <div class="field"><label for="email2">Email</label><input id="email2" name="email" type="email" inputmode="email" autocomplete="email" placeholder="you@email.com" required /></div>
-            <div class="field"><label for="phone2">Mobile number <span style="font-weight:400;color:var(--muted2)">(optional &mdash; for a text reminder)</span></label><input id="phone2" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="(555) 555-5555" /></div>
+            <div class="field"><label for="phone2">Mobile number <span style="font-weight:400;color:var(--muted2)">(US — for a text reminder)</span></label><input id="phone2" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="(555) 555-5555" required /></div>
             <label class="sms-consent" style="display:flex;gap:9px;align-items:flex-start;font-size:12px;line-height:1.5;color:var(--muted);margin:0 0 4px;cursor:pointer"><input type="checkbox" name="sms_optin" value="1" style="margin-top:3px;flex:none" /> <span>Text me reminders about the live event from FPU Text Alerts. Msg &amp; data rates may apply. Up to 4 msgs/month. Reply STOP to opt out, HELP for help. See <a href="/sms-terms" target="_blank" rel="noopener" style="color:var(--gold)">SMS Terms</a> and <a href="/privacy" target="_blank" rel="noopener" style="color:var(--gold)">Privacy Policy</a>.</span></label>
             <button class="btn btn--primary btn--lg" type="submit">Claim my spot &rarr;</button>
             <div class="form-msg" id="formErr2"></div>
@@ -539,6 +539,7 @@ footer{border-top:1px solid var(--line);padding:46px 0 30px;margin-top:18px}
     return o;
   })();
   function isEmail(v){ return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v); }
+  function isUSPhone(v){ var d=(v||'').replace(/\D/g,''); return d.length===10 || (d.length===11 && d.charAt(0)==='1'); }
   function wireForm(formId, errId, formViewId, successViewId){
     var form = document.getElementById(formId); if(!form) return;
     var err = document.getElementById(errId);
@@ -550,11 +551,12 @@ footer{border-top:1px solid var(--line);padding:46px 0 30px;margin-top:18px}
       var smsEl=form.querySelector('[name=sms_optin]'); var smsOptin=!!(smsEl&&smsEl.checked);
       if(!name){ err.textContent='Please enter your first name.'; err.style.display='block'; return; }
       if(!isEmail(email)){ err.textContent='Please enter a valid email address.'; err.style.display='block'; return; }
+      if(!isUSPhone(phone)){ err.textContent='Please enter a valid US mobile number.'; err.style.display='block'; return; }
       var btn=form.querySelector('button[type=submit]'); btn.disabled=true; btn.textContent='Saving your spot…';
       function onDone(){
         try{ if(window.fbq) fbq('track','Lead'); }catch(e){}
         try{ if(window.gtag) gtag('event','sign_up',{method:'waitlist'}); }catch(e){}
-        try { window.location.assign('/waitlist-thanks' + ((smsOptin && phone) ? '?sms=1' : '')); return; } catch(e){}
+        try { window.location.assign('/waitlist-thanks' + (smsOptin ? '?sms=1' : '')); return; } catch(e){}
         document.getElementById(formViewId).style.display='none';
         document.getElementById(successViewId).style.display='block';
       }
@@ -563,7 +565,8 @@ footer{border-top:1px solid var(--line);padding:46px 0 30px;margin-top:18px}
       Object.keys(AC_FIELDS).forEach(function(k){ body.append(k, AC_FIELDS[k]); });
       body.append('field[2]', AC_UTM.utm_source||''); body.append('field[3]', AC_UTM.utm_medium||''); body.append('field[4]', AC_UTM.utm_campaign||''); body.append('field[5]', AC_UTM.utm_content||'');
       body.append('fullname', name); body.append('email', email);
-      if(smsOptin && phone){ body.append('phone', phone); }
+      body.append('phone', phone);
+      if(smsOptin){ body.append('field[SMS_OPTIN]', 'Yes'); }
       fetch(AC_ACTION,{method:'POST',mode:'no-cors',keepalive:true,headers:{'Content-Type':'application/x-www-form-urlencoded'},body:body.toString()})
         .then(function(){ onDone(); }).catch(function(){ onDone(); });
     });
