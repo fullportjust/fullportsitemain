@@ -142,6 +142,9 @@ footer{border-top:1px solid var(--line);padding:26px 0;color:var(--muted2);font-
 
 <script>
   document.getElementById('yr').textContent = new Date().getFullYear();
+  // Conversion events fire here (AC redirects to this page after a successful submit)
+  try{ if(window.fbq) fbq('track','Lead'); }catch(e){}
+  try{ if(window.gtag) gtag('event','sign_up',{method:'waitlist'}); }catch(e){}
   // show the SMS reminder note only if they opted into texts on the waitlist form
   try{ if(new URLSearchParams(location.search).get('sms')==='1'){ var _n=document.getElementById('smsNote'); if(_n) _n.style.display='block'; } }catch(e){}
   // Live datetime: Sun Nov 29 2026, 3:00-4:30pm PT (23:00-00:30 UTC) - YouTube Live
