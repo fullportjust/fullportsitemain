@@ -539,7 +539,8 @@ footer{border-top:1px solid var(--line);padding:46px 0 30px;margin-top:18px}
     return o;
   })();
   function isEmail(v){ return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v); }
-  function isPhone(v){ var d=(v||'').replace(/\D/g,''); return d.length>=7 && d.length<=15; }
+  function normPhone(v){ v=(v||'').trim(); var plus=v.charAt(0)==='+'; var d=v.replace(/\D/g,''); if(plus) return d?'+'+d:''; if(d.length===10) return '+1'+d; if(d.length===11 && d.charAt(0)==='1') return '+'+d; return ''; }
+  function validPhone(p){ if(!p || p.charAt(0)!=='+') return false; var d=p.replace(/\D/g,''); return d.length>=8 && d.length<=15; }
   function wireForm(formId, errId, formViewId, successViewId){
     var form = document.getElementById(formId); if(!form) return;
     var err = document.getElementById(errId);
@@ -547,11 +548,11 @@ footer{border-top:1px solid var(--line);padding:46px 0 30px;margin-top:18px}
       ev.preventDefault(); err.style.display='none';
       var name=(form.querySelector('[name=fullname]').value||'').trim();
       var email=(form.querySelector('[name=email]').value||'').trim();
-      var phoneEl=form.querySelector('[name=phone]'); var phone=phoneEl?(phoneEl.value||'').trim():'';
+      var phoneEl=form.querySelector('[name=phone]'); var phone=normPhone(phoneEl?phoneEl.value:'');
       var smsEl=form.querySelector('[name=sms_optin]'); var smsOptin=!!(smsEl&&smsEl.checked);
       if(!name){ err.textContent='Please enter your first name.'; err.style.display='block'; return; }
       if(!isEmail(email)){ err.textContent='Please enter a valid email address.'; err.style.display='block'; return; }
-      if(!isPhone(phone)){ err.textContent='Please enter a valid mobile number.'; err.style.display='block'; return; }
+      if(!validPhone(phone)){ err.textContent='Please enter a valid mobile number'; err.style.display='block'; return; }
       var btn=form.querySelector('button[type=submit]'); btn.disabled=true; btn.textContent='Saving your spot…';
       function onDone(){
         try{ if(window.fbq) fbq('track','Lead'); }catch(e){}
