@@ -300,10 +300,15 @@ footer{border-top:1px solid var(--line);padding:46px 0 30px;margin-top:18px}
           <div id="formView">
             <h2>Get on the waitlist</h2>
             <p class="sub">Be first in line when the 100 seats open on the live. We'll email you the details and remind you before we go live.</p>
-            <!-- ActiveCampaign embedded form (Waitlist — 100 Traders, id 1) -->
-            <div class="_form_1"></div>
-            <script src="https://fullportuni.activehosted.com/f/embed.php?id=1" charset="utf-8"></script>
-            <p class="form-note" style="margin-top:12px">Free to join &middot; No spam &middot; Unsubscribe anytime</p>
+            <form id="waitForm" novalidate>
+              <div class="field"><label for="fname">First name</label><input id="fname" name="fullname" type="text" autocomplete="given-name" placeholder="Your first name" required /></div>
+              <div class="field"><label for="email">Email</label><input id="email" name="email" type="email" inputmode="email" autocomplete="email" placeholder="you@email.com" required /></div>
+              <div class="field"><label for="phone">Mobile number <span style="font-weight:400;color:var(--muted2)">(for a text reminder)</span></label><input id="phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="+1 818 555 1234" /><p style="margin:8px 0 0;font-size:13.5px;font-weight:700;color:var(--gold);line-height:1.35">Don't forget your country + area code (e.g. +1 for US).</p></div>
+              <label class="sms-consent" style="display:flex;gap:9px;align-items:flex-start;font-size:12px;line-height:1.5;color:var(--muted);margin:0 0 4px;cursor:pointer"><input type="checkbox" name="sms_optin" value="1" style="margin-top:3px;flex:none" /> <span>Text me reminders about the live event from FPU Text Alerts. Msg &amp; data rates may apply. Up to 4 msgs/month. Reply STOP to opt out, HELP for help. See <a href="/sms-terms" target="_blank" rel="noopener" style="color:var(--gold)">SMS Terms</a> and <a href="/privacy" target="_blank" rel="noopener" style="color:var(--gold)">Privacy Policy</a>.</span></label>
+              <button class="btn btn--primary btn--lg" type="submit" id="submitBtn">Claim my spot &rarr;</button>
+              <div class="form-msg" id="formErr"></div>
+              <p class="form-note">Free to join &middot; No spam &middot; Unsubscribe anytime</p>
+            </form>
             <div class="webinar-tag" style="margin-top:14px"><span class="dot"></span> Live on YouTube &middot; Sun, Nov 29 &middot; 3 PM PT</div>
             <div class="count" id="count" aria-label="Countdown to the live">
               <div class="box"><div class="v" id="cd-d">00</div><div class="k">Days</div></div>
@@ -311,6 +316,11 @@ footer{border-top:1px solid var(--line);padding:46px 0 30px;margin-top:18px}
               <div class="box"><div class="v" id="cd-m">00</div><div class="k">Min</div></div>
               <div class="box"><div class="v" id="cd-s">00</div><div class="k">Sec</div></div>
             </div>
+          </div>
+          <div class="success" id="successView">
+            <div class="ok"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></div>
+            <h2>You're on the list.</h2>
+            <p>You're in. We go live on YouTube <b>Sun, Nov 29 at 3 PM PT</b> &mdash; watch your inbox for the details.</p>
           </div>
         </div>
       </div>
@@ -441,8 +451,20 @@ footer{border-top:1px solid var(--line);padding:46px 0 30px;margin-top:18px}
         <div id="formView2">
           <h2>Get on the waitlist</h2>
           <p class="sub">Free to join. We'll email you the details and remind you before we go live on Nov 29.</p>
-          <a class="btn btn--primary btn--lg" href="#signup" style="width:100%;box-sizing:border-box;text-align:center">Get on the waitlist &rarr;</a>
-          <p class="form-note" style="margin-top:12px">Free to join &middot; No spam &middot; Unsubscribe anytime</p>
+          <form id="waitForm2" novalidate>
+            <div class="field"><label for="fname2">First name</label><input id="fname2" name="fullname" type="text" autocomplete="given-name" placeholder="Your first name" required /></div>
+            <div class="field"><label for="email2">Email</label><input id="email2" name="email" type="email" inputmode="email" autocomplete="email" placeholder="you@email.com" required /></div>
+            <div class="field"><label for="phone2">Mobile number <span style="font-weight:400;color:var(--muted2)">(for a text reminder)</span></label><input id="phone2" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="+1 818 555 1234" /><p style="margin:8px 0 0;font-size:13.5px;font-weight:700;color:var(--gold);line-height:1.35">Don't forget your country + area code (e.g. +1 for US).</p></div>
+            <label class="sms-consent" style="display:flex;gap:9px;align-items:flex-start;font-size:12px;line-height:1.5;color:var(--muted);margin:0 0 4px;cursor:pointer"><input type="checkbox" name="sms_optin" value="1" style="margin-top:3px;flex:none" /> <span>Text me reminders about the live event from FPU Text Alerts. Msg &amp; data rates may apply. Up to 4 msgs/month. Reply STOP to opt out, HELP for help. See <a href="/sms-terms" target="_blank" rel="noopener" style="color:var(--gold)">SMS Terms</a> and <a href="/privacy" target="_blank" rel="noopener" style="color:var(--gold)">Privacy Policy</a>.</span></label>
+            <button class="btn btn--primary btn--lg" type="submit">Claim my spot &rarr;</button>
+            <div class="form-msg" id="formErr2"></div>
+            <p class="form-note">Free to join &middot; No spam &middot; Unsubscribe anytime</p>
+          </form>
+        </div>
+        <div class="success" id="successView2">
+          <div class="ok"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></div>
+          <h2>You're on the list.</h2>
+          <p>You're in &mdash; we go live on YouTube Sun, Nov 29 at 3 PM PT.</p>
         </div>
       </div>
     </div>
@@ -500,7 +522,58 @@ footer{border-top:1px solid var(--line);padding:46px 0 30px;margin-top:18px}
     function tick(){var diff=target-Date.now();if(diff<0)diff=0;d.textContent=pad(Math.floor(diff/864e5));h.textContent=pad(Math.floor(diff%864e5/36e5));m.textContent=pad(Math.floor(diff%36e5/6e4));s.textContent=pad(Math.floor(diff%6e4/1e3));}
     tick(); setInterval(tick,1000);
   })();
-// Form handled by the ActiveCampaign embed above.
+  // ActiveCampaign (fullportuni) — post the contact to the list before redirect
+  var AC_ACTION = "https://fullportuni.activehosted.com/proc.php";
+  var AC_FIELDS = { u:"1", f:"1", s:"", c:"0", m:"0", act:"sub", v:"2", or:"be9773bd-8662-493e-aa64-740b549b2cec" };
+  // Capture UTM params on page load; persist in sessionStorage so they survive navigation.
+  var AC_UTM = (function(){
+    var keys=["utm_source","utm_medium","utm_campaign","utm_content"];
+    var q=new URLSearchParams(location.search); var o={};
+    keys.forEach(function(k){
+      var v=q.get(k);
+      if(v===null||v===""){ try{ v=sessionStorage.getItem('fpu_'+k); }catch(e){} }
+      v=v||"";
+      o[k]=v;
+      try{ if(v) sessionStorage.setItem('fpu_'+k, v); }catch(e){}
+    });
+    return o;
+  })();
+  function isEmail(v){ return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v); }
+  function normPhone(v){ v=(v||'').trim(); var plus=v.charAt(0)==='+'; var d=v.replace(/\D/g,''); if(plus) return d?'+'+d:''; if(d.length===10) return '+1'+d; if(d.length===11 && d.charAt(0)==='1') return '+'+d; return ''; }
+  function validPhone(p){ if(!p || p.charAt(0)!=='+') return false; var d=p.replace(/\D/g,''); return d.length>=8 && d.length<=15; }
+  function wireForm(formId, errId, formViewId, successViewId){
+    var form = document.getElementById(formId); if(!form) return;
+    var err = document.getElementById(errId);
+    form.addEventListener('submit', function(ev){
+      ev.preventDefault(); err.style.display='none';
+      var name=(form.querySelector('[name=fullname]').value||'').trim();
+      var email=(form.querySelector('[name=email]').value||'').trim();
+      var phoneEl=form.querySelector('[name=phone]'); var rawPhone=(phoneEl?phoneEl.value:'').trim(); var phone=normPhone(rawPhone);
+      var smsEl=form.querySelector('[name=sms_optin]'); var smsOptin=!!(smsEl&&smsEl.checked);
+      if(!name){ err.textContent='Please enter your first name.'; err.style.display='block'; return; }
+      if(!isEmail(email)){ err.textContent='Please enter a valid email address.'; err.style.display='block'; return; }
+      if(rawPhone && !validPhone(phone)){ err.textContent='Please enter a valid mobile number'; err.style.display='block'; return; }
+      var btn=form.querySelector('button[type=submit]'); btn.disabled=true; btn.textContent='Saving your spot…';
+      function onDone(){
+        try{ if(window.fbq) fbq('track','Lead'); }catch(e){}
+        try{ if(window.gtag) gtag('event','sign_up',{method:'waitlist'}); }catch(e){}
+        try { window.location.assign('/waitlist-thanks' + (smsOptin ? '?sms=1' : '')); return; } catch(e){}
+        document.getElementById(formViewId).style.display='none';
+        document.getElementById(successViewId).style.display='block';
+      }
+      if(!AC_ACTION){ console.log('[waitlist] pending AC wiring:', {name:name, email:email}); onDone(); return; }
+      var body=new URLSearchParams();
+      Object.keys(AC_FIELDS).forEach(function(k){ body.append(k, AC_FIELDS[k]); });
+      body.append('field[2]', AC_UTM.utm_source||''); body.append('field[3]', AC_UTM.utm_medium||''); body.append('field[4]', AC_UTM.utm_campaign||''); body.append('field[5]', AC_UTM.utm_content||'');
+      body.append('fullname', name); body.append('email', email);
+      body.append('phone', phone);
+      if(smsOptin){ body.append('field[6]', 'Yes'); }
+      fetch(AC_ACTION,{method:'POST',mode:'no-cors',keepalive:true,headers:{'Content-Type':'application/x-www-form-urlencoded'},body:body.toString()})
+        .then(function(){ onDone(); }).catch(function(){ onDone(); });
+    });
+  }
+  wireForm('waitForm','formErr','formView','successView');
+  wireForm('waitForm2','formErr2','formView2','successView2');
 </script>
 </body>
 </html>
